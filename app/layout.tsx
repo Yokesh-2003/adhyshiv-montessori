@@ -18,17 +18,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
-  title: "Adhyshvi Montessori",
+  title: "Adhyshiv Montessori",
   description: "Premium Montessori childcare and early learning.",
   keywords: [
     "Montessori",
     "childcare",
     "preschool",
     "early learning",
-    "Adhyshvi",
+    "Adhyshiv",
   ],
   openGraph: {
-    title: "Adhyshvi Montessori",
+    title: "Adhyshiv Montessori",
     description: "Premium Montessori childcare and early learning.",
     images: ["/images/hero-playground.jpg"],
   },

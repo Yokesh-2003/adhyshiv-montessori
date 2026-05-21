@@ -9,7 +9,7 @@ export default function FounderAboutSection() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fff9f5]/90 via-[#fff9f5]/40 to-[#fff9f5]/90"></div>
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

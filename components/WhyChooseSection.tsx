@@ -33,7 +33,7 @@ export default function WhyChooseSection() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fff9f5]/90 via-[#fff9f5]/40 to-[#fff9f5]/90"></div>
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -83,7 +83,7 @@ export default function WhyChooseSection() {
                   </div>
 
                   {/* Text - visible initially on colored background, dark bg appears on hover */}
-                  <div className="rounded-2xl bg-gradient-to-br from-white/5 to-white/10 p-6 transition-all duration-500 group-hover:bg-black/30 group-hover:from-transparent group-hover:to-transparent">
+                  <div className="rounded-2xl bg-gradient-to-br from-white/20 to-white/10 p-6 transition-all duration-500 group-hover:bg-black/30 group-hover:from-transparent group-hover:to-transparent">
                     {/* Title */}
                     <h3 className="mb-4 text-center text-2xl font-bold">
                       {pillar.title}
