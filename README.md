@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adhyshvi Montessori — Landing Page
+
+A premium Montessori childcare school landing page built with **Next.js**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Hero Image
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Replace the placeholder hero with your Montessori playground photo:
 
-## Learn More
+```
+public/images/hero-playground.jpg
+```
 
-To learn more about Next.js, take a look at the following resources:
+Recommended: **2400px+ wide**, landscape, high quality JPEG or WebP.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After replacing images, do a **hard refresh** (`Ctrl+Shift+R`) or restart the dev server. If the old image still appears, delete the cache folder:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+Remove-Item -Recurse -Force .next
+npm run dev
+```
 
-## Deploy on Vercel
+## Favicon
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Place your favicon here (either works):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/favicon.ico
+```
+
+or
+
+```
+public/favicon.ico
+```
+
+Do **not** use `app/icon.svg` — that file was removed so your `.ico` is used instead. Browsers cache favicons heavily; hard-refresh or open an incognito window to verify.
+
+## Project Structure
+
+```
+app/              # App Router pages & layout
+components/       # FloatingNavbar, HeroSection, MobileMenu
+lib/              # Shared nav configuration
+public/images/    # Static assets
+styles/           # Design tokens & utilities
+```
+
+## Scripts
+
+| Command        | Description          |
+| -------------- | -------------------- |
+| `npm run dev`  | Development server   |
+| `npm run build`| Production build     |
+| `npm run start`| Production server    |
+
+## Features
+
+- Full-viewport hero with `next/image` preload
+- Glassmorphism floating navbar with scroll state
+- Mobile hamburger menu
+- Subtle hero parallax (Framer Motion)
+- Accessible semantic HTML
+- Responsive desktop / tablet / mobile layouts

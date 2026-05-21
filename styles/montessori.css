@@ -1,0 +1,55 @@
+/* Kids-friendly Montessori design tokens */
+
+:root {
+  --color-brand: #f472b6;
+  --color-brand-dark: #db2777;
+  --color-brand-light: #fbcfe8;
+  --color-sunny: #fbbf24;
+  --color-sunny-light: #fde68a;
+  --color-sunny-dark: #d97706;
+  --color-cream: #fff9f5;
+  --color-peach: #fda4af;
+  --nav-float-offset: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background-color: rgba(251, 191, 36, 0.35);
+  color: inherit;
+}
+
+/* Fees Payment button */
+.btn-fees-3d {
+  background: #fbbf24;
+  color: #78350f;
+  border: none;
+  box-shadow:
+    0 4px 0 #d97706,
+    0 6px 14px rgba(120, 53, 15, 0.35);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-fees-3d:hover {
+  background: #fbbf24;
+  box-shadow:
+    0 4px 0 #d97706,
+    0 8px 18px rgba(120, 53, 15, 0.4);
+}
+
+.btn-fees-3d:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #d97706,
+    0 3px 8px rgba(120, 53, 15, 0.3);
+}
