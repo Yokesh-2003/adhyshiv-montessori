@@ -21,7 +21,7 @@ export default function FounderAboutSection() {
                 <h3 className="mb-6 text-xl font-bold uppercase tracking-wider text-yellow-500 md:text-2xl">
                   OUR FOUNDER ...
                 </h3>
-                <div className="flex gap-6">
+                <div className="flex flex-col gap-6 md:flex-row">
                   <div className="shrink-0">
                     <div className="relative h-64 w-56 overflow-hidden rounded-3xl border-4 border-white bg-white/20 shadow-lg">
                       <Image
