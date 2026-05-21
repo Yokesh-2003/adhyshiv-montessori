@@ -48,9 +48,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
+      className={`${dmSans.variable} ${fraunces.variable} h-full scroll-smooth antialiased overflow-x-hidden w-full`}
     >
-      <body className="min-h-full font-sans text-foreground">{children}</body>
+      <body className="min-h-full font-sans text-foreground overflow-x-hidden w-full">
+        {children}
+      </body>
     </html>
   );
 }

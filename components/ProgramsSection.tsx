@@ -16,14 +16,15 @@ export default function ProgramsSection() {
     <section
       id="programmes"
       aria-label="Our Programs"
-      className="relative w-full overflow-hidden py-24 md:py-32"
-      style={{
-        backgroundImage: "url('/images/home/bg3.jpg')",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative w-full overflow-hidden py-24 md:py-32 [clip-path:inset(0)]"
     >
+      {/* Stationary fixed background (works on PC and Mobile) */}
+      <div
+        style={{
+          backgroundImage: "url('/images/home/bg3.jpg')",
+        }}
+        className="fixed inset-0 bg-cover bg-center z-0 pointer-events-none"
+      />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

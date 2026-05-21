@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function WhyChooseSection() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
   const pillars = [
     {
       title: "Montessori Excellence",
@@ -27,7 +32,7 @@ export default function WhyChooseSection() {
 
   return (
     <section
-      className="relative w-full bg-cover bg-center py-20 md:py-32"
+      className="relative w-full bg-cover bg-center py-20 md:py-32 overflow-hidden"
       style={{
         backgroundImage: "url('/images/home/bg1.jpg')",
       }}
@@ -48,19 +53,22 @@ export default function WhyChooseSection() {
             </p>
           </div>
 
-          {/* Cards Grid */}
+          {/* Cards Grid (No scrolling on mobile, stacks vertically) */}
           <div className="grid gap-6 md:grid-cols-3">
             {pillars.map((pillar, index) => (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-3xl border-4 border-white/50 ${pillar.bgColor} p-8 text-white shadow-lg transition-all duration-500 hover:scale-105`}
+                onClick={() => setActiveCard(activeCard === index ? null : index)}
+                className={`group relative overflow-hidden rounded-3xl border-4 border-white/50 ${pillar.bgColor} p-8 text-white shadow-lg transition-all duration-500 hover:scale-105 cursor-pointer`}
                 style={{
                   perspective: "1000px",
                 }}
               >
-                {/* Background image on hover */}
+                {/* Background image on hover (PC) or click (Mobile) */}
                 <div
-                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className={`absolute inset-0 transition-opacity duration-500 ${
+                    activeCard === index ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
+                  }`}
                   style={{
                     backgroundImage: `url('${pillar.image}')`,
                     backgroundSize: "cover",
@@ -70,8 +78,12 @@ export default function WhyChooseSection() {
 
                 {/* Content wrapper */}
                 <div className="relative z-10">
-                  {/* Decorative top circle - hidden on hover */}
-                  <div className="mb-6 flex justify-center opacity-100 transition-opacity duration-500 group-hover:opacity-0">
+                  {/* Decorative top circle - hidden on hover (PC) or click (Mobile) */}
+                  <div
+                    className={`mb-6 flex justify-center transition-opacity duration-500 ${
+                      activeCard === index ? "opacity-0" : "opacity-100 md:group-hover:opacity-0"
+                    }`}
+                  >
                     <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-white/30 bg-white/20">
                       <Image
                         src={pillar.image}
@@ -82,8 +94,14 @@ export default function WhyChooseSection() {
                     </div>
                   </div>
 
-                  {/* Text - visible initially on colored background, dark bg appears on hover */}
-                  <div className="rounded-2xl bg-gradient-to-br from-white/20 to-white/10 p-6 transition-all duration-500 group-hover:bg-black/30 group-hover:from-transparent group-hover:to-transparent">
+                  {/* Text wrapper with hover/click color overlays */}
+                  <div
+                    className={`rounded-2xl bg-gradient-to-br from-white/20 to-white/10 p-6 transition-all duration-500 ${
+                      activeCard === index
+                        ? "bg-black/30 from-transparent to-transparent"
+                        : "md:group-hover:bg-black/30 md:group-hover:from-transparent md:group-hover:to-transparent"
+                    }`}
+                  >
                     {/* Title */}
                     <h3 className="mb-4 text-center text-2xl font-bold">
                       {pillar.title}

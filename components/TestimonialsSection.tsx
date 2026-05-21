@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
@@ -45,6 +45,13 @@ export default function TestimonialsSection() {
   const prevSlide = () => {
     setStartIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [startIndex]);
 
   // Get active 3 testimonials to display on desktop, wrapping around
   const activeTestimonials = [];
@@ -208,20 +215,80 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Slider Container */}
-        <div className="relative flex items-center justify-between gap-4">
+        <div className="relative flex items-center justify-center">
           
           {/* Left Navigation Arrow */}
           <button
             onClick={prevSlide}
             aria-label="Previous Testimonial"
-            className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
+            className="absolute left-0 z-20 flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
           >
-            <ChevronLeft className="h-6 w-6 stroke-[3]" />
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 stroke-[3]" />
           </button>
 
-          {/* Testimonial Cards Grid */}
-          <div className="w-full overflow-visible pt-8 pb-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Testimonial Cards Container */}
+          <div className="w-full overflow-hidden md:overflow-visible px-10 md:px-14 pt-10 pb-6">
+            {/* Mobile View: Single active review with slide animation */}
+            <div className="flex md:hidden w-full justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={testimonials[startIndex].name}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.35 }}
+                  className="relative flex flex-col items-center justify-between rounded-3xl bg-white p-5 shadow-xl pt-11 min-h-[240px] w-full"
+                >
+                  {/* Avatar badge at top */}
+                  <div className="absolute top-0 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white shadow-md bg-white">
+                    <div className={`flex h-full w-full items-center justify-center rounded-full ${testimonials[startIndex].avatarBg} text-white font-extrabold uppercase text-sm`}>
+                      {testimonials[startIndex].initials}
+                    </div>
+                    {/* Tiny Google logo watermark */}
+                    <div className="absolute -bottom-1 -right-1 flex h-5.5 w-5.5 items-center justify-center rounded-full bg-white shadow-sm border border-gray-100">
+                      <svg viewBox="0 0 24 24" className="h-3 w-3">
+                        <path
+                          fill="#EA4335"
+                          d="M12.24 10.285V14.4h6.887c-.648 2.433-2.76 4.114-5.647 4.114-3.417 0-6.19-2.77-6.19-6.19 0-3.42 2.773-6.19 6.19-6.19 1.56 0 2.973.58 4.062 1.524l3.076-3.076C18.665 2.062 15.617 1 12.24 1 6.033 1 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.48 0 11.832-5.32 11.832-12.24 0-.7-.076-1.385-.213-1.955H12.24z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Header metadata */}
+                  <div className="flex flex-col items-center text-center mt-1">
+                    <h3 className="font-extrabold text-sm text-gray-800 leading-tight">
+                      {testimonials[startIndex].name}
+                    </h3>
+                    <span className="text-[10px] text-gray-400 mt-0.5 font-medium">
+                      {testimonials[startIndex].date}
+                    </span>
+
+                    {/* Stars + Verified Review Badge */}
+                    <div className="mt-1.5 flex items-center justify-center gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      ))}
+                      <span className="ml-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#1e40af] text-white">
+                        <svg viewBox="0 0 24 24" fill="none" className="h-2 w-2 stroke-white stroke-[3.5]">
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Review Text Box */}
+                  <div className="flex-1 flex items-center justify-center px-1 py-2 my-auto">
+                    <p className="text-xs text-gray-600 leading-relaxed font-semibold line-clamp-3 text-center">
+                      "{testimonials[startIndex].text}"
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Desktop View: Carousel showing 3 active reviews */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6">
               <AnimatePresence mode="popLayout">
                 {activeTestimonials.map((item, index) => {
                   return (
@@ -232,14 +299,14 @@ export default function TestimonialsSection() {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.4 }}
-                      className="relative flex flex-col items-center justify-between rounded-3xl bg-white p-5 shadow-xl pt-11 h-[240px]"
+                      className="relative flex flex-col items-center justify-between rounded-3xl bg-white p-5 shadow-xl pt-11 h-[240px] w-full shrink-0"
                     >
                       {/* Avatar badge at top */}
                       <div className="absolute top-0 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white shadow-md bg-white">
                         <div className={`flex h-full w-full items-center justify-center rounded-full ${item.avatarBg} text-white font-extrabold uppercase text-sm`}>
                           {item.initials}
                         </div>
-                        {/* Tiny Google logo watermark as seen in screenshot */}
+                        {/* Tiny Google logo watermark */}
                         <div className="absolute -bottom-1 -right-1 flex h-5.5 w-5.5 items-center justify-center rounded-full bg-white shadow-sm border border-gray-100">
                           <svg viewBox="0 0 24 24" className="h-3 w-3">
                             <path
@@ -272,7 +339,7 @@ export default function TestimonialsSection() {
                         </div>
                       </div>
 
-                      {/* Review Text Box (flexible height container) */}
+                      {/* Review Text Box */}
                       <div className="flex-1 flex items-center justify-center px-1 py-2 my-auto">
                         <p className="text-xs text-gray-600 leading-relaxed font-semibold line-clamp-3 text-center">
                           {item.text}
@@ -289,9 +356,9 @@ export default function TestimonialsSection() {
           <button
             onClick={nextSlide}
             aria-label="Next Testimonial"
-            className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
+            className="absolute right-0 z-20 flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
           >
-            <ChevronRight className="h-6 w-6 stroke-[3]" />
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6 stroke-[3]" />
           </button>
 
         </div>

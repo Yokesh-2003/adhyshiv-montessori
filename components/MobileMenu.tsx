@@ -96,17 +96,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   </motion.li>
                 );
               })}
-              <motion.li
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.04, duration: 0.25 }}
-              >
-                <FeesPaymentButton
-                  onClick={onClose}
-                  fullWidth
-                  className="mt-4 py-3.5 text-sm"
-                />
-              </motion.li>
+
             </ul>
           </motion.nav>
         </>

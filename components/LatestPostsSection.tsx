@@ -75,27 +75,27 @@ export default function LatestPostsSection() {
         </div>
 
         {/* Carousel Slider Controls Container */}
-        <div className="relative flex items-center gap-4">
+        <div className="relative flex items-center gap-4 w-full">
           {/* Navigation Arrow Indicators */}
           <button
             onClick={() => scroll("left")}
             aria-label="Previous Post"
-            className="absolute left-[-16px] z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:left-[-24px]"
+            className="absolute left-[-16px] z-30 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:left-[-24px]"
           >
             <ChevronLeft className="h-5 w-5 stroke-[2.5]" />
           </button>
 
-          {/* Cards Grid */}
+          {/* Cards Grid (Vertical Stack on Mobile, Carousel Slider on Desktop) */}
           <div 
             ref={scrollRef}
-            className="w-full flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none pb-4"
+            className="flex flex-col gap-6 w-full md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory scrollbar-none md:pb-4 md:pt-4 md:px-4 md:-mx-4 md:overflow-visible"
           >
             {blogPosts.map((post) => (
               <motion.article
                 key={post.id}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start flex flex-col overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-xl transition-shadow"
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start flex flex-col overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-xl transition-shadow"
               >
                 {/* Image Container */}
                 <div className="relative h-60 w-full overflow-hidden bg-gray-100">
@@ -130,7 +130,7 @@ export default function LatestPostsSection() {
           <button
             onClick={() => scroll("right")}
             aria-label="Next Post"
-            className="absolute right-[-16px] z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:right-[-24px]"
+            className="absolute right-[-16px] z-30 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:right-[-24px]"
           >
             <ChevronRight className="h-5 w-5 stroke-[2.5]" />
           </button>

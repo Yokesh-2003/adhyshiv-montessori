@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function FounderAboutSection() {
   return (
     <section
-      className="relative w-full bg-cover bg-center py-16 md:py-24"
+      className="relative w-full bg-cover bg-center py-16 md:py-24 overflow-hidden"
       style={{
         backgroundImage: "url('/images/home/bg2.jpg')",
       }}

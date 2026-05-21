@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <FloatingNavbar />
-      <main>
+      <main className="overflow-x-hidden w-full relative">
         <HeroSection />
         <WhyChooseSection />
         <FounderAboutSection />

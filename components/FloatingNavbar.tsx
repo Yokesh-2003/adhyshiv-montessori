@@ -180,6 +180,7 @@ export default function FloatingNavbar() {
 
           {/* Mobile Layout */}
           <div className="flex w-full items-center justify-between md:hidden">
+            <FeesPaymentButton />
             <button
               type="button"
               suppressHydrationWarning
@@ -191,7 +192,6 @@ export default function FloatingNavbar() {
             >
               <Menu className="h-5 w-5" aria-hidden="true" />
             </button>
-            <FeesPaymentButton />
           </div>
         </motion.nav>
       </motion.header>
