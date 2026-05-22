@@ -150,7 +150,10 @@ export default function FloatingNavbar() {
               if (item.dropdownItems) {
                 return (
                   <div key={item.label} className="group relative py-2 shrink-0">
-                    <button className="flex items-center gap-1.5 px-1.5 py-1 text-xs font-semibold text-white/95 transition-colors duration-300 hover:text-white md:px-2 lg:px-2.5 lg:text-sm">
+                    <button
+                      suppressHydrationWarning
+                      className="flex items-center gap-1.5 px-1.5 py-1 text-xs font-semibold text-white/95 transition-colors duration-300 hover:text-white md:px-2 lg:px-2.5 lg:text-sm"
+                    >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-white/90" />
                     </button>

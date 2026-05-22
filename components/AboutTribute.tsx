@@ -66,7 +66,7 @@ export default function AboutTribute() {
           </div>
 
           {/* Right Column: Redesigned Elegant Offset Frame Portrait */}
-          <div className="lg:col-span-4 flex justify-center lg:pl-4">
+          <div className="lg:col-span-4 flex justify-center lg:pl-4 pt-12 lg:pt-28">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[3/4] z-10">
               
               {/* Dashed Orbital Paths in the Background (centered behind image) */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -140,6 +140,14 @@ export default function AboutLogoStory() {
     handleStepChange((activeStep - 1 + 4) % 4);
   };
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleStepChange((activeStep + 1) % 4);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [activeStep, rotationAngle]);
+
   const dialRotation = rotationAngle;
 
   return (
@@ -182,6 +190,7 @@ export default function AboutLogoStory() {
               const isCompleted = stage.id <= activeStep;
               return (
                 <button
+                  suppressHydrationWarning
                   key={stage.id}
                   onClick={() => handleStepChange(stage.id)}
                   className="flex flex-col items-center gap-3 focus:outline-none group cursor-pointer"
@@ -218,6 +227,7 @@ export default function AboutLogoStory() {
             
             {/* Left navigation arrow */}
             <button
+              suppressHydrationWarning
               onClick={handlePrev}
               className="absolute left-0 sm:left-4 z-20 w-12 h-12 bg-white/80 hover:bg-white text-blue-900 border border-stone-200 rounded-full shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer"
               aria-label="Previous logo stage"
@@ -260,6 +270,7 @@ export default function AboutLogoStory() {
                   return (
                     <div key={stage.id} className={wrapperClass}>
                       <motion.button
+                        suppressHydrationWarning
                         onClick={() => handleStepChange(stage.id)}
                         className="w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-white border border-stone-200 shadow-md flex items-center justify-center p-2.5 cursor-pointer group focus:outline-none relative"
                         animate={{ rotate: -dialRotation }} // Keep icons upright!
@@ -283,6 +294,7 @@ export default function AboutLogoStory() {
 
             {/* Right navigation arrow */}
             <button
+              suppressHydrationWarning
               onClick={handleNext}
               className="absolute right-0 sm:right-4 z-20 w-12 h-12 bg-white/80 hover:bg-white text-blue-900 border border-stone-200 rounded-full shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none cursor-pointer"
               aria-label="Next logo stage"

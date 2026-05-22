@@ -12,7 +12,7 @@ export default function AboutFounder() {
           
           {/* Left Column: Portrait cutout compartment & Vision Realized callout */}
           <div className="lg:col-span-5 flex flex-col items-center lg:border-r lg:border-stone-200/40 lg:pr-12 pb-8 lg:pb-0">
-            <div className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[420px] aspect-[4/5] z-10">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[3/4] z-10">
               
               {/* Dashed Orbital Paths centered directly behind the image */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none z-[-10] overflow-visible hidden md:block opacity-[0.75]">
@@ -34,17 +34,23 @@ export default function AboutFounder() {
                 </motion.div>
               </div>
 
-              <Image
-                src="/images/about/founder.png"
-                alt="Founder of AdhyShiv"
-                fill
-                className="object-contain filter drop-shadow-md hover:scale-[1.02] transition-transform duration-500"
-                priority
-              />
+              {/* Decorative offset gold/amber background board */}
+              <div className="absolute inset-0 bg-amber-500/10 border-2 border-amber-500/20 rounded-[2rem] translate-x-4 translate-y-4 -z-10" />
+
+              {/* Picture frame */}
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden border border-amber-200 shadow-xl bg-white">
+                <Image
+                  src="/images/about/founder.png"
+                  alt="Founder of AdhyShiv"
+                  fill
+                  className="object-cover transition-all duration-500 hover:scale-[1.03]"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Occupying the space below the image with Milestone 5 (A Vision Realized) */}
-            <div className="relative mt-8 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[420px] bg-white/70 backdrop-blur-sm border border-amber-200 p-5 rounded-2xl shadow-sm flex flex-col gap-3 z-10 overflow-hidden text-left">
+            <div className="relative mt-8 w-full max-w-[280px] sm:max-w-[320px] bg-white/70 backdrop-blur-sm border border-amber-200 p-5 rounded-2xl shadow-sm flex flex-col gap-3 z-10 overflow-hidden text-left">
               <div className="absolute -right-6 -bottom-6 w-24 h-16 opacity-[0.04] pointer-events-none z-0">
                 <Image
                   src="/images/about/overlay.png"

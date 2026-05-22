@@ -9,11 +9,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/about" },
   {
-    label: "Gallery",
+    label: "Campus",
     href: "#",
     dropdownItems: [
-      { label: "Facility", href: "/#facilities" },
-      { label: "Events Gallery", href: "/#events" },
+      { label: "Facility", href: "/campus/facility" },
+      { label: "Events", href: "/campus/events" },
+      { label: "Gallery", href: "/campus/gallery" },
     ],
   },
   { label: "Contact Us", href: "/#contact" },
