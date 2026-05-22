@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const blogPosts = [
@@ -27,19 +25,6 @@ const blogPosts = [
 ];
 
 export default function LatestPostsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.8;
-      scrollRef.current.scrollTo({
-        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section 
       className="relative w-full py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
@@ -74,66 +59,43 @@ export default function LatestPostsSection() {
           </h2>
         </div>
 
-        {/* Carousel Slider Controls Container */}
-        <div className="relative flex items-center gap-4 w-full">
-          {/* Navigation Arrow Indicators */}
-          <button
-            onClick={() => scroll("left")}
-            aria-label="Previous Post"
-            className="absolute left-[-16px] z-30 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:left-[-24px]"
-          >
-            <ChevronLeft className="h-5 w-5 stroke-[2.5]" />
-          </button>
+        {/* Cards Grid (Arrange in same line / 3 columns on both mobile and desktop) */}
+        <div className="grid grid-cols-3 gap-1.5 sm:gap-4 md:gap-6 w-full">
+          {blogPosts.map((post) => (
+            <motion.article
+              key={post.id}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="w-full flex flex-col overflow-hidden rounded-xl sm:rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-xl transition-shadow"
+            >
+              {/* Image Container */}
+              <div className="relative h-20 sm:h-40 md:h-60 w-full overflow-hidden bg-gray-100">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 768px) 33vw, (max-width: 1200px) 33vw, 33vw"
+                />
+              </div>
 
-          {/* Cards Grid (Vertical Stack on Mobile, Carousel Slider on Desktop) */}
-          <div 
-            ref={scrollRef}
-            className="flex flex-col gap-6 w-full md:flex-row md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory scrollbar-none md:pb-4 md:pt-4 md:px-4 md:-mx-4 md:overflow-visible"
-          >
-            {blogPosts.map((post) => (
-              <motion.article
-                key={post.id}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start flex flex-col overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-xl transition-shadow"
-              >
-                {/* Image Container */}
-                <div className="relative h-60 w-full overflow-hidden bg-gray-100">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+              {/* Content Box */}
+              <div className="flex flex-col flex-1 p-2 sm:p-4 md:p-6">
+                <h3 className="text-[10px] sm:text-base md:text-lg font-black text-blue-800 leading-tight line-clamp-2 hover:text-blue-600 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="mt-1 sm:mt-3 text-[8px] sm:text-xs md:text-sm text-gray-500 leading-normal line-clamp-2 sm:line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <div className="mt-2 sm:mt-5 pt-1 sm:pt-4 border-t border-gray-50">
+                  <button className="text-[9px] sm:text-xs md:text-sm font-black text-blue-600 hover:text-blue-800 transition-colors">
+                    Read More
+                  </button>
                 </div>
-
-                {/* Content Box */}
-                <div className="flex flex-col flex-1 p-6">
-                  <h3 className="text-lg font-bold text-blue-800 leading-snug line-clamp-2 hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-gray-500 leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <div className="mt-5 pt-4 border-t border-gray-50">
-                    <button className="text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-
-          <button
-            onClick={() => scroll("right")}
-            aria-label="Next Post"
-            className="absolute right-[-16px] z-30 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:bg-gray-50 active:scale-95 md:right-[-24px]"
-          >
-            <ChevronRight className="h-5 w-5 stroke-[2.5]" />
-          </button>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

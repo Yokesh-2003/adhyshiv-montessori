@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const SLIDES = [
-  { src: "/images/hero-playground.jpg",  alt: "Montessori playground" },
-  { src: "/images/hero-eating.png",      alt: "Children having nutritious meals" },
-  { src: "/images/hero-classroom.png",   alt: "Montessori classroom learning" },
+  { src: "/images/hero-playground.jpg", alt: "Montessori playground" },
+  { src: "/images/hero-eating.png", alt: "Children having nutritious meals" },
+  { src: "/images/hero-classroom.png", alt: "Montessori classroom learning" },
 ];
 
 const INTERVAL_MS = 4000;
@@ -40,7 +40,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative h-screen min-h-[100dvh] w-full overflow-hidden"
+      className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:h-screen md:min-h-[100dvh] overflow-hidden"
       aria-label="Hero"
     >
       {/* Slideshow */}

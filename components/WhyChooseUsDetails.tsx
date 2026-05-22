@@ -35,31 +35,34 @@ export default function WhyChooseUsDetails() {
                 Why Choose Us ••••••
               </span>
               
-              {/* Vision */}
-              <div className="mt-6">
-                <h3 className="text-xl font-bold text-[#1e40af] md:text-2xl mb-3">
-                  Vision
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed md:text-base">
-                  At the core of our vision resides the authentic Montessori experience,
-                  wherein children embark on a profound journey of self-discovery and
-                  academic growth. Our unwavering commitment is to nurture and
-                  empower confident, socially responsible individuals who become pillars of
-                  our community.
-                </p>
-              </div>
+              {/* Vision & Mission Side-by-Side (2 Columns) */}
+              <div className="grid grid-cols-2 gap-4 md:gap-8 mt-6">
+                {/* Vision */}
+                <div>
+                  <h3 className="text-base sm:text-xl font-bold text-[#1e40af] md:text-2xl mb-1.5 sm:mb-3">
+                    Vision
+                  </h3>
+                  <p className="text-[10px] sm:text-sm text-gray-600 leading-normal sm:leading-relaxed md:text-base">
+                    At the core of our vision resides the authentic Montessori experience,
+                    wherein children embark on a profound journey of self-discovery and
+                    academic growth. Our unwavering commitment is to nurture and
+                    empower confident, socially responsible individuals who become pillars of
+                    our community.
+                  </p>
+                </div>
 
-              {/* Mission */}
-              <div className="mt-8">
-                <h3 className="text-xl font-bold text-[#1e40af] md:text-2xl mb-3">
-                  Mission
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed md:text-base">
-                  Driven by a commitment to excellence, our mission is to deliver an
-                  esteemed Montessori education program. This program is meticulously
-                  overseen by certified Montessori professionals and enriched through the
-                  utilization of the highest quality educational materials.
-                </p>
+                {/* Mission */}
+                <div>
+                  <h3 className="text-base sm:text-xl font-bold text-[#1e40af] md:text-2xl mb-1.5 sm:mb-3">
+                    Mission
+                  </h3>
+                  <p className="text-[10px] sm:text-sm text-gray-600 leading-normal sm:leading-relaxed md:text-base">
+                    Driven by a commitment to excellence, our mission is to deliver an
+                    esteemed Montessori education program. This program is meticulously
+                    overseen by certified Montessori professionals and enriched through the
+                    utilization of the highest quality educational materials.
+                  </p>
+                </div>
               </div>
 
               {/* Values */}
@@ -67,7 +70,7 @@ export default function WhyChooseUsDetails() {
                 <h3 className="text-xl font-bold text-[#1e40af] md:text-2xl mb-4">
                   Values
                 </h3>
-                <ul className="grid gap-3 sm:grid-cols-2">
+                <ul className="grid grid-cols-2 gap-2 sm:gap-3">
                   {valuesList.map((value, i) => (
                     <motion.li
                       key={value}
@@ -75,10 +78,10 @@ export default function WhyChooseUsDetails() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: i * 0.05 }}
-                      className="flex items-center gap-2.5 text-sm text-gray-600 md:text-base"
+                      className="flex items-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm text-gray-600 md:text-base"
                     >
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1e40af]/10 text-[#1e40af]">
-                        <Check className="h-3 w-3 stroke-[3]" />
+                      <span className="flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-[#1e40af]/10 text-[#1e40af]">
+                        <Check className="h-2.5 w-2.5 sm:h-3 sm:w-3 stroke-[3]" />
                       </span>
                       <span>{value}</span>
                     </motion.li>

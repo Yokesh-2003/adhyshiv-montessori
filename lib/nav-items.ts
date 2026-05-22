@@ -6,16 +6,16 @@ export type NavItem = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/about" },
   {
     label: "Gallery",
     href: "#",
     dropdownItems: [
-      { label: "Facility", href: "#facilities" },
-      { label: "Events Gallery", href: "#events" },
+      { label: "Facility", href: "/#facilities" },
+      { label: "Events Gallery", href: "/#events" },
     ],
   },
-  { label: "Contact Us", href: "#contact" },
-  { label: "Fees Payment", href: "#fees", isCta: true },
+  { label: "Contact Us", href: "/#contact" },
+  { label: "Fees Payment", href: "/#fees", isCta: true },
 ];
