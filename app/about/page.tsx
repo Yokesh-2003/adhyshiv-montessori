@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       <FloatingNavbar />
       <main
-        className="relative min-h-screen pt-28 md:pt-32 pb-24 w-full overflow-hidden bg-[#fff9f5]"
+        className="relative min-h-screen pt-20 md:pt-24 pb-24 w-full overflow-hidden bg-[#fff9f5]"
         style={{
           backgroundImage: "radial-gradient(rgba(226, 232, 240, 0.45) 1.5px, transparent 1.5px)",
           backgroundSize: "32px 32px"

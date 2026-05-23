@@ -67,33 +67,8 @@ export default function FloatingNavbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 shadow-md flex flex-col bg-gradient-to-r from-white/95 via-purple-50/95 to-purple-100/90 border-b border-purple-100/50 backdrop-blur-md"
+        className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 shadow-md bg-gradient-to-r from-white/95 via-purple-50/95 to-purple-100/90 border-b border-purple-100/50 backdrop-blur-md"
       >
-        {/* Top Info Header (Transparent bg, animated collapse on scroll) */}
-        <motion.div
-          animate={{
-            height: scrolled ? 0 : "auto",
-            opacity: scrolled ? 0 : 1,
-          }}
-          transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-          className="hidden md:flex w-full items-center justify-center bg-transparent px-6 text-xs text-slate-600 font-bold select-none overflow-hidden"
-        >
-          <div className="flex items-center gap-8 py-2.5">
-            <a href="mailto:Info@adhyshiv.com" className="flex items-center gap-2 hover:text-purple-600 transition-colors">
-              <Mail className="h-3.5 w-3.5 text-purple-500" />
-              <span>Info@adhyshiv.com</span>
-            </a>
-            <a href="tel:+917871111111" className="flex items-center gap-2 hover:text-purple-600 transition-colors">
-              <Phone className="h-3.5 w-3.5 text-purple-500" />
-              <span>+91 78711 11111</span>
-            </a>
-            <div className="flex items-center gap-2">
-              <Clock className="h-3.5 w-3.5 text-purple-500" />
-              <span>Mon - Fri 08:30 - 16:00</span>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Main Navbar container - single row, transparent bg */}
         <motion.nav
           layout
@@ -108,12 +83,8 @@ export default function FloatingNavbar() {
             aria-label="Home"
           >
             <BrandLogo 
-              size={scrolled ? 100 : 135} 
-              className={`transition-all duration-300 ${
-                scrolled 
-                  ? "w-[80px] md:w-[100px] h-[80px] md:h-[100px]" 
-                  : "w-[90px] md:w-[135px] h-[90px] md:h-[135px] md:-my-8"
-              }`} 
+              size={125} 
+              className="w-[90px] md:w-[125px] h-[90px] md:h-[125px] md:-my-4 transition-all duration-300"
             />
           </Link>
 

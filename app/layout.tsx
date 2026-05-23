@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
+import FloatingWidgets from "@/components/FloatingWidgets";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({
     >
       <body className="min-h-full font-sans text-foreground overflow-x-hidden w-full">
         {children}
+        <FloatingWidgets />
       </body>
     </html>
   );
