@@ -221,6 +221,7 @@ export default function TestimonialsSection() {
           <button
             onClick={prevSlide}
             aria-label="Previous Testimonial"
+            suppressHydrationWarning
             className="absolute left-0 z-20 flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 stroke-[3]" />
@@ -356,6 +357,7 @@ export default function TestimonialsSection() {
           <button
             onClick={nextSlide}
             aria-label="Next Testimonial"
+            suppressHydrationWarning
             className="absolute right-0 z-20 flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-transform hover:scale-105 active:scale-95"
           >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6 stroke-[3]" />

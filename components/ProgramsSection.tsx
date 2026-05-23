@@ -21,7 +21,7 @@ export default function ProgramsSection() {
       {/* Stationary fixed background (works on PC and Mobile) */}
       <div
         style={{
-          backgroundImage: "url('/images/home/bg3.jpg')",
+          backgroundImage: "url('/images/home/bg3.png')",
         }}
         className="fixed inset-0 bg-cover bg-center z-0 pointer-events-none"
       />
@@ -37,7 +37,7 @@ export default function ProgramsSection() {
             transition={{ duration: 0.6 }}
             className="text-3xl font-bold text-white md:text-4xl lg:text-5xl"
           >
-            Our Programs....
+            Our Programs
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

@@ -89,7 +89,10 @@ export default function LatestPostsSection() {
                 </p>
                 
                 <div className="mt-2 sm:mt-5 pt-1 sm:pt-4 border-t border-gray-50">
-                  <button className="text-[9px] sm:text-xs md:text-sm font-black text-blue-600 hover:text-blue-800 transition-colors">
+                  <button
+                    suppressHydrationWarning
+                    className="text-[9px] sm:text-xs md:text-sm font-black text-blue-600 hover:text-blue-800 transition-colors"
+                  >
                     Read More
                   </button>
                 </div>
