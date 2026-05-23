@@ -24,7 +24,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -34,16 +34,16 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed left-4 right-4 top-[8rem] z-50 max-h-[calc(100vh-9.5rem)] overflow-y-auto rounded-3xl border border-white/20 bg-brand p-6 shadow-2xl shadow-brand-dark/30 md:hidden"
+            className="fixed left-4 right-4 top-[8rem] z-50 max-h-[calc(100vh-9.5rem)] overflow-y-auto rounded-3xl border border-purple-100/50 bg-gradient-to-br from-white/98 via-purple-50/98 to-purple-100/95 p-6 shadow-2xl shadow-purple-900/10 md:hidden"
             role="navigation"
             aria-label="Mobile navigation"
           >
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-6 flex items-center justify-between">
               <BrandLogo size={48} />
               <button
                 type="button"
                 onClick={onClose}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-700 transition-colors hover:bg-purple-200"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" aria-hidden="true" />
@@ -60,16 +60,16 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       transition={{ delay: index * 0.04, duration: 0.25 }}
                       className="flex flex-col"
                     >
-                      <span className="block px-4 pt-3 pb-1 text-[0.75rem] font-black text-white/50 uppercase tracking-widest">
+                      <span className="block px-4 pt-3 pb-1 text-[0.75rem] font-bold text-slate-400 uppercase tracking-widest">
                         {item.label}
                       </span>
-                      <ul className="flex flex-col gap-1 pl-4 border-l border-white/20 ml-4 mb-2">
+                      <ul className="flex flex-col gap-1 pl-4 border-l-2 border-purple-100 ml-4 mb-2">
                         {item.dropdownItems.map((subItem) => (
                           <li key={subItem.href}>
                             <Link
                               href={subItem.href}
                               onClick={onClose}
-                              className="block rounded-xl px-4 py-2.5 text-[0.875rem] font-bold text-white hover:bg-white/10"
+                              className="block rounded-xl px-4 py-2.5 text-[0.875rem] font-bold text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
                             >
                               {subItem.label}
                             </Link>
@@ -89,14 +89,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className="block rounded-xl px-4 py-3 text-[0.9375rem] font-medium text-white/95 transition-colors hover:bg-white/10 hover:text-white"
+                      className="block rounded-xl px-4 py-3 text-[0.9375rem] font-bold text-blue-900 transition-colors hover:bg-purple-50 hover:text-purple-700"
                     >
                       {item.label}
                     </Link>
                   </motion.li>
                 );
               })}
-
             </ul>
           </motion.nav>
         </>

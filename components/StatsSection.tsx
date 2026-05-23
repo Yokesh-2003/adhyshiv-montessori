@@ -36,7 +36,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="relative w-full bg-[#fff9f5] pt-0 pb-8 md:pb-12 select-none">
+    <section className="relative w-full bg-[#fff9f5] pt-10 md:pt-0 pb-8 md:pb-12 select-none">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, i) => {

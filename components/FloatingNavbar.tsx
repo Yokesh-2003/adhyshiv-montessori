@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Menu, Search, Calendar, Images, ChevronDown } from "lucide-react";
+import { Menu, Search, ChevronDown, Mail, Phone, Clock } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { NAV_ITEMS } from "@/lib/nav-items";
@@ -22,10 +22,10 @@ function NavLink({
     <Link
       href={href}
       onClick={onNavigate}
-      className="group relative shrink-0 whitespace-nowrap px-1.5 py-1 text-xs font-medium text-white/95 transition-colors duration-300 hover:text-white md:px-2 lg:px-2.5 lg:text-sm"
+      className="group relative shrink-0 whitespace-nowrap px-1.5 py-1 text-xs font-bold text-blue-900 transition-colors duration-300 hover:text-purple-600 md:px-2 lg:px-2.5 lg:text-sm"
     >
       {label}
-      <span className="absolute -bottom-0.5 left-2 right-2 h-px origin-left scale-x-0 rounded-full bg-white transition-transform duration-300 ease-out group-hover:scale-x-100 lg:left-2.5 lg:right-2.5" />
+      <span className="absolute -bottom-0.5 left-2 right-2 h-0.5 origin-left scale-x-0 rounded-full bg-purple-600 transition-transform duration-300 ease-out group-hover:scale-x-100 lg:left-2.5 lg:right-2.5" />
     </Link>
   );
 }
@@ -67,84 +67,43 @@ export default function FloatingNavbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed inset-x-0 top-0 z-50 flex flex-col w-full transition-all duration-500 shadow-md ${
-          scrolled
-            ? "bg-brand-dark/95 shadow-brand-dark/20 backdrop-blur-md"
-            : "bg-brand/95 shadow-brand/20 backdrop-blur-md"
-        }`}
+        className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 shadow-md flex flex-col bg-gradient-to-r from-white/95 via-purple-50/95 to-purple-100/90 border-b border-purple-100/50 backdrop-blur-md"
       >
-        {/* Top Header with centered Logo and Search Bar */}
-        <div className="flex w-full items-center justify-between border-b border-white/10 px-5 py-2 sm:px-8 md:px-12 lg:px-16">
-          {/* Left Side: School Calendar & School Album */}
-          <div className="hidden md:flex items-center gap-6 w-60 lg:w-[280px] shrink-0">
-            <Link
-              href="#calendar"
-              className="flex items-center gap-2 group cursor-pointer"
-            >
-              <Calendar className="h-6 w-6 shrink-0 text-sunny transition-transform duration-200 group-hover:scale-105" />
-              <span className="text-[10px] font-extrabold tracking-wider text-white/85 transition-colors group-hover:text-white uppercase">
-                School Calendar
-              </span>
-            </Link>
-            <Link
-              href="#album"
-              className="flex items-center gap-2 group cursor-pointer"
-            >
-              <Images className="h-6 w-6 shrink-0 text-sunny transition-transform duration-200 group-hover:scale-105" />
-              <span className="text-[10px] font-extrabold tracking-wider text-white/85 transition-colors group-hover:text-white uppercase">
-                School Album
-              </span>
-            </Link>
-          </div>
-
-          {/* Logo centered */}
-          <Link
-            href="#home"
-            className="flex shrink-0 items-center transition-opacity hover:opacity-90"
-            aria-label="Home"
-          >
-            <BrandLogo size={120} />
-          </Link>
-
-          {/* Right Search Bar on desktop */}
-          <div className="hidden md:flex w-60 lg:w-64 shrink-0 justify-end items-center">
-            <form onSubmit={handleSearchSubmit} className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                suppressHydrationWarning
-                className="w-full rounded-full bg-white py-2.5 pl-10 pr-4 text-xs font-bold tracking-wide text-gray-800 placeholder-gray-400 outline-none transition-all shadow-[0_4px_0_#cbd5e1,0_6px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_0_#cbd5e1,0_8px_18px_rgba(0,0,0,0.15)] focus:translate-y-[3px] focus:shadow-[0_1px_0_#cbd5e1,0_3px_8px_rgba(0,0,0,0.1)]"
-              />
-              <Search className="absolute left-3.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-gray-400" />
-            </form>
-          </div>
-
-          {/* Mobile search button on the right */}
-          <div className="flex md:hidden w-10 justify-end items-center">
-            <button
-              type="button"
-              suppressHydrationWarning
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
-              aria-label="Search"
-            >
-              <Search className="h-4 w-4" />
-            </button>
+        {/* Top Info Header (Transparent bg, inherited panel styling) */}
+        <div className="hidden md:flex w-full items-center justify-center bg-transparent px-6 py-2.5 sm:px-8 md:px-12 lg:px-16 text-xs text-slate-600 font-bold select-none">
+          <div className="flex items-center gap-8">
+            <a href="mailto:Info@adhyshiv.com" className="flex items-center gap-2 hover:text-purple-600 transition-colors">
+              <Mail className="h-3.5 w-3.5 text-purple-500" />
+              <span>Info@adhyshiv.com</span>
+            </a>
+            <a href="tel:+917871111111" className="flex items-center gap-2 hover:text-purple-600 transition-colors">
+              <Phone className="h-3.5 w-3.5 text-purple-500" />
+              <span>+91 78711 11111</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <Clock className="h-3.5 w-3.5 text-purple-500" />
+              <span>Mon - Fri 08:30 - 16:00</span>
+            </div>
           </div>
         </div>
 
-        {/* Navigation Bar Row */}
+        {/* Main Navbar container - single row, transparent bg */}
         <motion.nav
           layout
-          className="flex min-h-[3.25rem] w-full items-center justify-between gap-4 px-6 py-1.5 sm:min-h-[3.5rem] sm:px-8 md:px-12 lg:px-16"
+          className="flex h-20 items-center justify-between gap-4 px-6 py-2 sm:px-8 md:px-12 lg:px-16 bg-transparent"
           role="navigation"
           aria-label="Main navigation"
         >
-          {/* Left spacer for desktop to balance right button and center the links */}
-          <div className="hidden md:block md:w-40 md:shrink-0" />
+          {/* Logo on the left */}
+          <Link
+            href="#home"
+            className="flex shrink-0 items-center transition-opacity hover:opacity-90 relative z-20"
+            aria-label="Home"
+          >
+            <BrandLogo size={135} className="w-[90px] md:w-[135px] h-[90px] md:h-[135px] md:-my-8" />
+          </Link>
 
-          {/* Navigation Links centered on desktop (fixed overflow clipping dropdown) */}
+          {/* Navigation Links centered on desktop */}
           <div className="hidden flex-grow items-center justify-center gap-1.5 overflow-visible md:flex lg:gap-3">
             {navItems.map((item) => {
               if (item.dropdownItems) {
@@ -152,10 +111,10 @@ export default function FloatingNavbar() {
                   <div key={item.label} className="group relative py-2 shrink-0">
                     <button
                       suppressHydrationWarning
-                      className="flex items-center gap-1.5 px-1.5 py-1 text-xs font-semibold text-white/95 transition-colors duration-300 hover:text-white md:px-2 lg:px-2.5 lg:text-sm"
+                      className="flex items-center gap-1.5 px-1.5 py-1 text-xs font-bold text-blue-900 transition-colors duration-300 hover:text-purple-600 md:px-2 lg:px-2.5 lg:text-sm"
                     >
                       {item.label}
-                      <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-white/90" />
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-blue-900 group-hover:text-purple-600" />
                     </button>
                     {/* Dropdown Menu */}
                     <div className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 hidden group-hover:block w-40 rounded-2xl bg-white p-2 shadow-xl border border-gray-100 z-50">
@@ -163,7 +122,7 @@ export default function FloatingNavbar() {
                         <Link
                           key={subItem.href}
                           href={subItem.href}
-                          className="block rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-700 hover:bg-brand-light hover:text-brand-dark transition-colors"
+                          className="block rounded-xl px-3.5 py-2.5 text-xs font-bold text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
                         >
                           {subItem.label}
                         </Link>
@@ -176,18 +135,29 @@ export default function FloatingNavbar() {
             })}
           </div>
 
-          {/* Fees Payment Button on desktop */}
-          <div className="hidden md:flex md:w-40 md:shrink-0 justify-end">
+          {/* Search Bar & Fees Payment Button on desktop */}
+          <div className="hidden md:flex items-center gap-4 shrink-0">
+            <form onSubmit={handleSearchSubmit} className="relative w-44 lg:w-48">
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                suppressHydrationWarning
+                className="w-full rounded-full bg-white/80 border border-purple-200/60 py-2 pl-9 pr-4 text-xs font-semibold text-gray-800 placeholder-gray-400 outline-none transition-all shadow-sm focus:bg-white focus:border-purple-400 focus:ring-2 focus:ring-purple-200/50"
+              />
+              <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-gray-400" />
+            </form>
             <FeesPaymentButton />
           </div>
 
-          {/* Mobile Layout */}
-          <div className="flex w-full items-center justify-between md:hidden">
+          {/* Mobile Layout (Logo left, Button & Hamburger menu right) */}
+          <div className="flex items-center gap-3 md:hidden">
             <FeesPaymentButton />
             <button
               type="button"
               suppressHydrationWarning
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 transition-colors hover:bg-purple-200"
               onClick={() => setMobileOpen(true)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutFounder() {
   return (
-    <section className="w-full bg-[#fff8f3] border-y border-stone-200/40 py-16 sm:py-24 mt-16 sm:mt-24 relative overflow-hidden">
+    <section className="w-full bg-[#fff8f3] border-y border-stone-200/40 pt-20 sm:pt-28 pb-16 sm:pb-24 mt-0 relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">

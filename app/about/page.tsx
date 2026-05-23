@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       <FloatingNavbar />
       <main
-        className="relative min-h-screen pt-48 md:pt-52 pb-24 w-full overflow-hidden bg-[#fff9f5]"
+        className="relative min-h-screen pt-28 md:pt-32 pb-24 w-full overflow-hidden bg-[#fff9f5]"
         style={{
           backgroundImage: "radial-gradient(rgba(226, 232, 240, 0.45) 1.5px, transparent 1.5px)",
           backgroundSize: "32px 32px"
@@ -25,11 +25,11 @@ export default function AboutPage() {
         {/* Section 1.5: Vision, Mission, Values */}
         <AboutVisionMission />
 
-        {/* Section 2: Founder of AdhyShiv (Stepped timeline & Left concentric orbits) */}
-        <AboutFounder />
-
         {/* Section 3: Maria Montessori Tribute (Tribute letter & Right concentric orbits) */}
         <AboutTribute />
+
+        {/* Section 2: Founder of AdhyShiv (Stepped timeline & Left concentric orbits) */}
+        <AboutFounder />
 
         {/* Section 4: Our Logo Story (Interactive Ferris Wheel Dial Carousel) */}
         <AboutLogoStory />
