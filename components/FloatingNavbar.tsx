@@ -69,9 +69,16 @@ export default function FloatingNavbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 shadow-md flex flex-col bg-gradient-to-r from-white/95 via-purple-50/95 to-purple-100/90 border-b border-purple-100/50 backdrop-blur-md"
       >
-        {/* Top Info Header (Transparent bg, inherited panel styling) */}
-        <div className="hidden md:flex w-full items-center justify-center bg-transparent px-6 py-2.5 sm:px-8 md:px-12 lg:px-16 text-xs text-slate-600 font-bold select-none">
-          <div className="flex items-center gap-8">
+        {/* Top Info Header (Transparent bg, animated collapse on scroll) */}
+        <motion.div
+          animate={{
+            height: scrolled ? 0 : "auto",
+            opacity: scrolled ? 0 : 1,
+          }}
+          transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+          className="hidden md:flex w-full items-center justify-center bg-transparent px-6 text-xs text-slate-600 font-bold select-none overflow-hidden"
+        >
+          <div className="flex items-center gap-8 py-2.5">
             <a href="mailto:Info@adhyshiv.com" className="flex items-center gap-2 hover:text-purple-600 transition-colors">
               <Mail className="h-3.5 w-3.5 text-purple-500" />
               <span>Info@adhyshiv.com</span>
@@ -85,7 +92,7 @@ export default function FloatingNavbar() {
               <span>Mon - Fri 08:30 - 16:00</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Navbar container - single row, transparent bg */}
         <motion.nav
@@ -100,7 +107,14 @@ export default function FloatingNavbar() {
             className="flex shrink-0 items-center transition-opacity hover:opacity-90 relative z-20"
             aria-label="Home"
           >
-            <BrandLogo size={135} className="w-[90px] md:w-[135px] h-[90px] md:h-[135px] md:-my-8" />
+            <BrandLogo 
+              size={scrolled ? 100 : 135} 
+              className={`transition-all duration-300 ${
+                scrolled 
+                  ? "w-[80px] md:w-[100px] h-[80px] md:h-[100px]" 
+                  : "w-[90px] md:w-[135px] h-[90px] md:h-[135px] md:-my-8"
+              }`} 
+            />
           </Link>
 
           {/* Navigation Links centered on desktop */}
