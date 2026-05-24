@@ -13,8 +13,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "#",
     dropdownItems: [
       { label: "Facility", href: "/campus/facility" },
-      { label: "Events", href: "/campus/events" },
-      { label: "Gallery", href: "/campus/gallery" },
+      { label: "Events & Gallery", href: "/campus/events" },
     ],
   },
   { label: "Contact Us", href: "/#contact" },
