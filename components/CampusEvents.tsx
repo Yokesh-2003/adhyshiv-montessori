@@ -15,173 +15,7 @@ import {
   Image as ImageIcon
 } from "lucide-react";
 
-// List of actual image names verified in the public/images/events folders
-const eventImagesByYear: Record<string, { folder: string; files: string[] }> = {
-  "2026": {
-    folder: "2026",
-    files: [
-      "IMG_20260121_102619.jpg",
-      "IMG-20260303-WA0007.jpg",
-      "IMG-20260303-WA0016.jpg",
-      "IMG-20260303-WA0018.jpg",
-      "IMG-20260304-WA0216.jpg",
-      "IMG-20260304-WA0234.jpg",
-      "IMG-20260408-WA0003.jpg",
-      "IMG-20260408-WA0077 (2).jpg",
-      "IMG-20260410-WA0002 (1).jpg",
-      "IMG-20260418-WA0021.jpg"
-    ]
-  },
-  "2025": {
-    folder: "2025",
-    files: [
-      "024A7137.JPG",
-      "024A7178.JPG",
-      "024A7179.JPG",
-      "024A7184.JPG",
-      "024A7251.JPG",
-      "024A7256.JPG",
-      "024A7260.JPG",
-      "024A7270.JPG",
-      "024A7295.JPG",
-      "024A7398.JPG",
-      "024A7462.JPG",
-      "024A7472.JPG",
-      "024A7492.JPG",
-      "024A7506.JPG",
-      "024A7517.JPG",
-      "024A7588.JPG",
-      "024A7595.JPG",
-      "024A7616.JPG",
-      "024A7620.JPG",
-      "024A7707.JPG",
-      "024A7728.JPG",
-      "024A7749.JPG",
-      "024A7777.JPG",
-      "024A7780.JPG",
-      "024A7787.JPG",
-      "024A7798.JPG",
-      "IMG-20250112-WA0028.jpg",
-      "IMG-20250112-WA0229.jpg",
-      "IMG-20250112-WA0243.jpg",
-      "IMG-20250112-WA0245.jpg",
-      "IMG-20250112-WA0248.jpg",
-      "IMG-20250112-WA0251.jpg",
-      "IMG-20250112-WA0262.jpg"
-    ]
-  },
-  "2024": {
-    folder: "2024",
-    files: [
-      "IMG-20240316-WA0005.jpg",
-      "IMG-20240316-WA0031.jpg",
-      "IMG-20240316-WA0040.jpg",
-      "IMG-20240316-WA0041.jpg",
-      "IMG-20240316-WA0042.jpg",
-      "IMG-20240316-WA0045.jpg",
-      "IMG-20240316-WA0054.jpg",
-      "IMG-20240316-WA0057.jpg",
-      "IMG-20240316-WA0061.jpg",
-      "IMG-20240316-WA0062.jpg",
-      "IMG-20240316-WA0063.jpg",
-      "IMG-20240316-WA0066.jpg",
-      "IMG-20240325-WA0075.jpg",
-      "IMG-20240325-WA0076.jpg",
-      "IMG-20240325-WA0077.jpg",
-      "IMG-20240325-WA0078.jpg",
-      "IMG-20240325-WA0079.jpg",
-      "IMG-20240325-WA0080.jpg",
-      "IMG-20240405-WA0042.jpg",
-      "IMG-20240405-WA0044.jpg",
-      "IMG-20240405-WA0056.jpg",
-      "IMG-20240408-WA0074.jpg",
-      "IMG-20240408-WA0077.jpg",
-      "IMG-20240408-WA0100.jpg",
-      "IMG-20240701-WA0099.jpg",
-      "IMG-20240701-WA0132.jpg",
-      "IMG-20240802-WA0050.jpg"
-    ]
-  },
-  "2023": {
-    folder: "2023",
-    files: [
-      "1.jpg",
-      "2.jpg",
-      "3.jpg",
-      "4.jpg",
-      "5.jpg",
-      "6.jpg",
-      "7.jpg",
-      "8.jpg",
-      "9.jpg",
-      "10.jpg",
-      "11.jpg",
-      "12.jpg",
-      "13.jpg",
-      "14.jpg",
-      "15.jpg",
-      "16.jpg",
-      "17.jpg",
-      "18.jpg",
-      "19.jpg",
-      "20.jpg",
-      "21.JPG",
-      "22.jpg",
-      "23.jpg",
-      "24.jpg",
-      "25.jpg",
-      "26.jpg",
-      "27.jpg",
-      "28.jpg"
-    ]
-  },
-  "summercamp": {
-    folder: "Summer camp",
-    files: [
-      "IMG-20260428-WA0006.jpg",
-      "IMG-20260428-WA0007.jpg",
-      "IMG-20260428-WA0008.jpg",
-      "IMG-20260428-WA0009.jpg",
-      "IMG-20260428-WA0010.jpg",
-      "IMG-20260428-WA0012.jpg",
-      "IMG-20260428-WA0013.jpg",
-      "IMG-20260428-WA0014.jpg",
-      "IMG-20260428-WA0015.jpg",
-      "IMG-20260428-WA0017.jpg",
-      "IMG-20260428-WA0018.jpg",
-      "IMG-20260428-WA0019.jpg",
-      "IMG-20260428-WA0021.jpg",
-      "IMG-20260428-WA0023.jpg",
-      "IMG-20260502-WA0016.jpg",
-      "IMG-20260502-WA0017.jpg",
-      "IMG-20260502-WA0018.jpg",
-      "IMG-20260502-WA0019.jpg",
-      "IMG-20260502-WA0020.jpg",
-      "IMG-20260502-WA0024.jpg",
-      "IMG-20260502-WA0025.jpg",
-      "IMG-20260502-WA0031.jpg",
-      "IMG-20260502-WA0033.jpg",
-      "IMG-20260502-WA0035.jpg",
-      "IMG-20260502-WA0036.jpg",
-      "IMG-20260502-WA0037.jpg",
-      "IMG-20260502-WA0038.jpg",
-      "IMG-20260502-WA0039.jpg",
-      "IMG-20260506-WA0014.jpg",
-      "IMG-20260506-WA0015.jpg",
-      "IMG-20260506-WA0020.jpg",
-      "IMG-20260506-WA0021.jpg",
-      "IMG-20260506-WA0022.jpg",
-      "IMG-20260506-WA0023.jpg",
-      "IMG-20260507-WA0003.jpg",
-      "IMG-20260507-WA0004.jpg",
-      "IMG-20260507-WA0005.jpg",
-      "IMG-20260507-WA0006.jpg",
-      "IMG-20260507-WA0007.jpg",
-      "IMG-20260507-WA0019.jpg",
-      "IMG-20260507-WA0023.jpg"
-    ]
-  }
-};
+import { eventImagesData } from "@/lib/events-data";
 
 const categories = [
   { id: "2026", label: "2026", icon: CalendarDays },
@@ -275,32 +109,38 @@ function PremiumCalendarIcon() {
 
 export default function CampusEvents() {
   const [selectedYear, setSelectedYear] = useState<string>("2026");
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [selectedEvent, setSelectedEvent] = useState<string>("all");
+  const [isYearDropdownOpen, setIsYearDropdownOpen] = useState<boolean>(false);
+  const [isEventDropdownOpen, setIsEventDropdownOpen] = useState<boolean>(false);
   const [visibleCount, setVisibleCount] = useState<number>(12);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState<boolean>(false);
   
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const yearDropdownRef = useRef<HTMLDivElement>(null);
+  const eventDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+      if (yearDropdownRef.current && !yearDropdownRef.current.contains(event.target as Node)) {
+        setIsYearDropdownOpen(false);
+      }
+      if (eventDropdownRef.current && !eventDropdownRef.current.contains(event.target as Node)) {
+        setIsEventDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Reset visible images on year change
+  // Reset visible images on filter change
   useEffect(() => {
     setVisibleCount(12);
-  }, [selectedYear]);
+  }, [selectedYear, selectedEvent]);
 
   // Disable body scroll when lightbox is active
   useEffect(() => {
@@ -315,19 +155,44 @@ export default function CampusEvents() {
   }, [lightboxIndex]);
 
   const activeCategory = categories.find(cat => cat.id === selectedYear) || categories[0];
-  const activeImages = eventImagesByYear[selectedYear] || { folder: "2026", files: [] };
-  const displayedFiles = activeImages.files.slice(0, visibleCount);
-  const hasMore = activeImages.files.length > visibleCount;
+  const yearData = eventImagesData[selectedYear] || { folder: selectedYear, events: {} };
+
+  // Get list of event subfolders for this year, sorting them alphabetically
+  const eventFolderNames = Object.keys(yearData.events)
+    .filter(evt => evt !== "")
+    .sort((a, b) => a.localeCompare(b));
+
+  const hasEventFolders = eventFolderNames.length > 0;
+
+  // Build list of images based on selected event filter
+  const allImages: { fileName: string; eventFolder: string }[] = [];
+  if (selectedEvent === "all") {
+    // Flatten all events in alphabetical order of folders
+    Object.entries(yearData.events).forEach(([eventFolder, files]) => {
+      files.forEach(fileName => {
+        allImages.push({ fileName, eventFolder });
+      });
+    });
+  } else {
+    // Only selected event
+    const files = yearData.events[selectedEvent] || [];
+    files.forEach(fileName => {
+      allImages.push({ fileName, eventFolder: selectedEvent });
+    });
+  }
+
+  const displayedFiles = allImages.slice(0, visibleCount);
+  const hasMore = allImages.length > visibleCount;
 
   const handleNextImage = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex + 1) % activeImages.files.length);
+      setLightboxIndex((lightboxIndex + 1) % allImages.length);
     }
   };
 
   const handlePrevImage = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex - 1 + activeImages.files.length) % activeImages.files.length);
+      setLightboxIndex((lightboxIndex - 1 + allImages.length) % allImages.length);
     }
   };
 
@@ -403,64 +268,141 @@ export default function CampusEvents() {
         />
       </div>
 
-      {/* Year Dropdown Filter & Description Text */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-12 pb-6 border-b border-stone-200/50 relative z-40">
+      {/* Filters & Description Text */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 pb-6 border-b border-stone-200/50 relative z-40">
         <div className="flex items-center gap-3">
           <ImageIcon className="w-5 h-5 text-blue-600" />
           <span className="text-slate-700 font-bold text-sm sm:text-base">
-            Showing <strong className="text-blue-900">{activeImages.files.length}</strong> moments in <strong className="text-blue-900">{activeCategory.label}</strong>
+            Showing <strong className="text-blue-900">{allImages.length}</strong> moments in <strong className="text-blue-900">{activeCategory.label}</strong>
+            {selectedEvent !== "all" && (
+              <> • <strong className="text-blue-600">{selectedEvent}</strong></>
+            )}
           </span>
         </div>
 
-        {/* Custom Styled Dropdown */}
-        <div className="relative w-64" ref={dropdownRef}>
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full flex items-center justify-between px-5 py-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm text-left font-bold text-slate-800 hover:border-blue-400 hover:shadow-md transition-all duration-300 z-10"
-          >
-            <div className="flex items-center gap-2.5">
-              <activeCategory.icon className="w-4 h-4 text-blue-600" />
-              <span>{activeCategory.label}</span>
-            </div>
-            <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
-          </button>
+        {/* Filters Group */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+          {/* Year Dropdown */}
+          <div className="relative w-full sm:w-56" ref={yearDropdownRef}>
+            <button
+              onClick={() => {
+                setIsYearDropdownOpen(!isYearDropdownOpen);
+                setIsEventDropdownOpen(false);
+              }}
+              className="w-full flex items-center justify-between px-5 py-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm text-left font-bold text-slate-800 hover:border-blue-400 hover:shadow-md transition-all duration-300 z-10"
+            >
+              <div className="flex items-center gap-2.5">
+                <activeCategory.icon className="w-4 h-4 text-blue-600" />
+                <span>{activeCategory.label}</span>
+              </div>
+              <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${isYearDropdownOpen ? "rotate-180" : ""}`} />
+            </button>
 
-          <AnimatePresence>
-            {isDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                transition={{ duration: 0.15 }}
-                className="absolute right-0 top-full mt-2 w-full bg-white border border-stone-200/80 rounded-2xl shadow-xl overflow-hidden z-50 p-1.5"
+            <AnimatePresence>
+              {isYearDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 left-0 top-full mt-2 bg-white border border-stone-200/80 rounded-2xl shadow-xl overflow-hidden z-50 p-1.5"
+                >
+                  {categories.map((cat) => {
+                    const Icon = cat.icon;
+                    const isSelected = cat.id === selectedYear;
+                    return (
+                      <button
+                        key={cat.id}
+                        onClick={() => {
+                          setSelectedYear(cat.id);
+                          setSelectedEvent("all");
+                          setIsYearDropdownOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-colors duration-200 ${
+                          isSelected 
+                            ? "bg-blue-50 text-blue-900" 
+                            : "text-slate-600 hover:bg-stone-50 hover:text-slate-900"
+                        }`}
+                      >
+                        <Icon className={`w-4 h-4 ${isSelected ? "text-blue-600" : "text-slate-400"}`} />
+                        <span>{cat.label}</span>
+                        {isSelected && (
+                          <Sparkles className="w-3.5 h-3.5 text-amber-500 ml-auto animate-pulse" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Event Dropdown */}
+          {hasEventFolders && (
+            <div className="relative w-full sm:w-56" ref={eventDropdownRef}>
+              <button
+                onClick={() => {
+                  setIsEventDropdownOpen(!isEventDropdownOpen);
+                  setIsYearDropdownOpen(false);
+                }}
+                className="w-full flex items-center justify-between px-5 py-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm text-left font-bold text-slate-800 hover:border-blue-400 hover:shadow-md transition-all duration-300 z-10"
               >
-                {categories.map((cat) => {
-                  const Icon = cat.icon;
-                  const isSelected = cat.id === selectedYear;
-                  return (
+                <div className="flex items-center gap-2.5 truncate">
+                  <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                  <span className="truncate">{selectedEvent === "all" ? "All Events" : selectedEvent}</span>
+                </div>
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 shrink-0 ${isEventDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {isEventDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 left-0 top-full mt-2 bg-white border border-stone-200/80 rounded-2xl shadow-xl overflow-hidden z-50 p-1.5 max-h-64 overflow-y-auto"
+                  >
                     <button
-                      key={cat.id}
                       onClick={() => {
-                        setSelectedYear(cat.id);
-                        setIsDropdownOpen(false);
+                        setSelectedEvent("all");
+                        setIsEventDropdownOpen(false);
                       }}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-colors duration-200 ${
-                        isSelected 
-                          ? "bg-blue-50 text-blue-900" 
+                        selectedEvent === "all"
+                          ? "bg-blue-50 text-blue-900"
                           : "text-slate-600 hover:bg-stone-50 hover:text-slate-900"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isSelected ? "text-blue-600" : "text-slate-400"}`} />
-                      <span>{cat.label}</span>
-                      {isSelected && (
-                        <Sparkles className="w-3.5 h-3.5 text-amber-500 ml-auto animate-pulse" />
-                      )}
+                      <Sparkles className={`w-4 h-4 ${selectedEvent === "all" ? "text-blue-600" : "text-slate-400"}`} />
+                      <span>All Events</span>
                     </button>
-                  );
-                })}
-              </motion.div>
-            )}
-          </AnimatePresence>
+
+                    {eventFolderNames.map((evt) => {
+                      const isSelected = evt === selectedEvent;
+                      return (
+                        <button
+                          key={evt}
+                          onClick={() => {
+                            setSelectedEvent(evt);
+                            setIsEventDropdownOpen(false);
+                          }}
+                          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-colors duration-200 ${
+                            isSelected
+                              ? "bg-blue-50 text-blue-900"
+                              : "text-slate-600 hover:bg-stone-50 hover:text-slate-900"
+                          }`}
+                        >
+                          <ImageIcon className={`w-4 h-4 ${isSelected ? "text-blue-600" : "text-slate-400"}`} />
+                          <span className="truncate">{evt}</span>
+                        </button>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
         </div>
       </div>
 
@@ -469,36 +411,41 @@ export default function CampusEvents() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        key={selectedYear} // key forces re-mount anims on category change
+        key={`${selectedYear}-${selectedEvent}`} // key forces re-mount anims on filter change
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:gap-8"
       >
-        {displayedFiles.map((file, index) => (
-          <motion.div
-            key={file}
-            variants={itemVariants}
-            onClick={() => setLightboxIndex(index)}
-            className="group relative aspect-square overflow-hidden rounded-[2rem] bg-white p-3 border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgb(30,64,175,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer"
-          >
-            <div className="relative w-full h-full overflow-hidden rounded-[1.5rem] bg-slate-50 border border-slate-100">
-              <Image
-                src={`/images/events/${activeImages.folder}/${file}`}
-                alt={`${activeCategory.label} Event - ${file}`}
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-slate-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md scale-90 group-hover:scale-100 transition-transform duration-300">
-                  <Sparkles className="w-5 h-5 text-blue-600" />
+        {displayedFiles.map((item, index) => {
+          const srcPath = item.eventFolder
+            ? `/images/events/${yearData.folder}/${item.eventFolder}/${item.fileName}`
+            : `/images/events/${yearData.folder}/${item.fileName}`;
+          return (
+            <motion.div
+              key={`${item.eventFolder}-${item.fileName}`}
+              variants={itemVariants}
+              onClick={() => setLightboxIndex(index)}
+              className="group relative aspect-square overflow-hidden rounded-[2rem] bg-white p-3 border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgb(30,64,175,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer"
+            >
+              <div className="relative w-full h-full overflow-hidden rounded-[1.5rem] bg-slate-50 border border-slate-100">
+                <Image
+                  src={srcPath}
+                  alt={`${activeCategory.label} Event - ${item.fileName}`}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-slate-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md scale-90 group-hover:scale-100 transition-transform duration-300">
+                    <Sparkles className="w-5 h-5 text-blue-600" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </motion.div>
 
       {/* No Images Fallback */}
-      {activeImages.files.length === 0 && (
+      {allImages.length === 0 && (
         <div className="w-full text-center py-20 bg-white/60 backdrop-blur-md rounded-3xl border border-stone-200/60">
           <ImageIcon className="w-12 h-12 text-slate-400 mx-auto mb-3" />
           <h3 className="text-lg font-bold text-slate-700">No moments found</h3>
@@ -535,7 +482,7 @@ export default function CampusEvents() {
             {/* Top Toolbar */}
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-white z-10 pointer-events-none">
               <span className="bg-slate-900/65 px-4 py-2 rounded-full text-sm font-bold backdrop-blur-sm">
-                {activeCategory.label} • {lightboxIndex + 1} / {activeImages.files.length}
+                {activeCategory.label} {allImages[lightboxIndex]?.eventFolder ? `• ${allImages[lightboxIndex].eventFolder}` : ""} • {lightboxIndex + 1} / {allImages.length}
               </span>
               <button
                 onClick={() => setLightboxIndex(null)}
@@ -568,14 +515,23 @@ export default function CampusEvents() {
               transition={{ duration: 0.25 }}
               className="relative w-full max-w-3xl h-[65vh] sm:h-[80vh] overflow-hidden rounded-3xl bg-slate-900/40 border border-white/10 shadow-2xl flex items-center justify-center"
             >
-              <Image
-                src={`/images/events/${activeImages.folder}/${activeImages.files[lightboxIndex]}`}
-                alt="Event Lightbox Enlarged"
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
-              />
+              {(() => {
+                const activeImage = allImages[lightboxIndex];
+                if (!activeImage) return null;
+                const srcPath = activeImage.eventFolder
+                  ? `/images/events/${yearData.folder}/${activeImage.eventFolder}/${activeImage.fileName}`
+                  : `/images/events/${yearData.folder}/${activeImage.fileName}`;
+                return (
+                  <Image
+                    src={srcPath}
+                    alt="Event Lightbox Enlarged"
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority
+                  />
+                );
+              })()}
             </motion.div>
           </motion.div>
         )}
