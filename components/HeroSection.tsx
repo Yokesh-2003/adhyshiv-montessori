@@ -181,7 +181,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
               {/* Enroll Now Button */}
               <Link
-                href="#enroll"
+                href="/contact?type=contact"
                 className="relative group inline-flex items-center justify-center px-8 py-3.5 bg-[#ff6097] text-white font-extrabold text-base sm:text-lg rounded-full border-[3px] border-slate-800 shadow-[0_6px_0_#1e293b] hover:translate-y-[2px] hover:shadow-[0_4px_0_#1e293b] active:translate-y-[6px] active:shadow-none transition-all duration-150 cursor-pointer select-none"
               >
                 Enroll Now
@@ -192,7 +192,7 @@ export default function HeroSection() {
 
               {/* Visit Button */}
               <Link
-                href="#about"
+                href="/contact?type=visit"
                 className="relative group inline-flex items-center justify-center px-8 py-3.5 bg-[#3b82f6] text-white font-extrabold text-base sm:text-lg rounded-full border-[3px] border-slate-800 shadow-[0_6px_0_#1e293b] hover:translate-y-[2px] hover:shadow-[0_4px_0_#1e293b] active:translate-y-[6px] active:shadow-none transition-all duration-150 cursor-pointer select-none"
               >
                 Visit

@@ -36,6 +36,17 @@ export default function ContactPage() {
   
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // Read query parameters for initial active form type
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type");
+      if (type === "contact" || type === "visit") {
+        setActiveForm(type);
+      }
+    }
+  }, []);
+
   // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
