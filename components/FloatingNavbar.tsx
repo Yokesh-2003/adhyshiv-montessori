@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Menu, Search, ChevronDown, Mail, Phone, Clock } from "lucide-react";
+import { Menu, ChevronDown, Mail, Phone, Clock } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { NAV_ITEMS } from "@/lib/nav-items";
@@ -33,7 +33,6 @@ function NavLink({
 export default function FloatingNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 24);
@@ -51,13 +50,6 @@ export default function FloatingNavbar() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      console.log("Searching for:", searchQuery);
-    }
-  };
 
   const navItems = NAV_ITEMS.filter((item) => !item.isCta);
 
@@ -120,19 +112,8 @@ export default function FloatingNavbar() {
             })}
           </div>
 
-          {/* Search Bar & Fees Payment Button on desktop */}
+          {/* Fees Payment Button on desktop */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <form onSubmit={handleSearchSubmit} className="relative w-44 lg:w-48">
-              <input
-                type="text"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                suppressHydrationWarning
-                className="w-full rounded-full bg-white/80 border border-purple-200/60 py-2 pl-9 pr-4 text-xs font-semibold text-gray-800 placeholder-gray-400 outline-none transition-all shadow-sm focus:bg-white focus:border-purple-400 focus:ring-2 focus:ring-purple-200/50"
-              />
-              <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-gray-400" />
-            </form>
             <FeesPaymentButton />
           </div>
 

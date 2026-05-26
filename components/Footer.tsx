@@ -3,11 +3,11 @@ import BrandLogo from "./BrandLogo";
 import { MapPin, Phone, Mail, Clock, Users } from "lucide-react";
 
 const usefulLinks = [
-  { label: "About", href: "#about" },
-  { label: "Programs", href: "#programmes" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Workshops", href: "#workshops" },
-  { label: "Blog", href: "#blogs" },
+  { label: "About Us", href: "/about" },
+  { label: "Facility", href: "/campus/facility" },
+  { label: "Events & Gallery", href: "/campus/events" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Fees Payment", href: "/#fees" },
 ];
 
 const contactItems = [
