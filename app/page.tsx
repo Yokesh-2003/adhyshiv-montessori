@@ -2,7 +2,7 @@ import FloatingNavbar from "@/components/FloatingNavbar";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
-import FounderAboutSection from "@/components/FounderAboutSection";
+import HomeVideoPlayer from "@/components/HomeVideoPlayer";
 import ProgramsSection from "@/components/ProgramsSection";
 import WhyChooseUsDetails from "@/components/WhyChooseUsDetails";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -17,7 +17,7 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <WhyChooseSection />
-        <FounderAboutSection />
+        <HomeVideoPlayer />
         <ProgramsSection />
         <WhyChooseUsDetails />
         <TestimonialsSection />

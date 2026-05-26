@@ -16,6 +16,6 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "Events & Gallery", href: "/campus/events" },
     ],
   },
-  { label: "Contact Us", href: "/#contact" },
+  { label: "Contact Us", href: "/contact" },
   { label: "Fees Payment", href: "/#fees", isCta: true },
 ];
