@@ -276,7 +276,7 @@ export default function HomeVideoPlayer() {
           <video
             ref={videoRef}
             src="/images/adhyshiv.mp4"
-            className="w-full h-full object-cover rounded-[2.3rem]"
+            className={`w-full h-full rounded-[2.3rem] ${isFullscreen ? 'object-contain' : 'object-cover'}`}
             muted={isMuted}
             playsInline
             autoPlay
