@@ -130,7 +130,7 @@ export default function HomeVideoPlayer() {
         syncPlayback(isVisible);
       },
       {
-        threshold: 0.5, // Play when 50% of the player is visible on screen
+        threshold: 0.8, // Play when 80% of the player is visible on screen
       }
     );
 
@@ -143,12 +143,17 @@ export default function HomeVideoPlayer() {
       if (video) {
         video.muted = false;
         setIsMuted(false);
-        video.play()
-          .then(() => {
-            setIsPlaying(true);
-            cleanup();
-          })
-          .catch((err) => console.log("Bypass play attempt failed:", err));
+        if (isVisible) {
+          video.play()
+            .then(() => {
+              setIsPlaying(true);
+              cleanup();
+            })
+            .catch((err) => console.log("Bypass play attempt failed:", err));
+        } else {
+          // If not visible yet, we still unmute it so it plays with sound when scrolled into view
+          cleanup();
+        }
       }
     };
 
