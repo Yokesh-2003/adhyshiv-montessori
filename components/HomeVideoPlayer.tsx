@@ -307,6 +307,7 @@ export default function HomeVideoPlayer() {
                 className="absolute inset-0 flex items-center justify-center bg-slate-950/20 pointer-events-none"
               >
                 <button
+                  suppressHydrationWarning
                   onClick={(e) => {
                     e.stopPropagation();
                     togglePlay();
@@ -337,6 +338,7 @@ export default function HomeVideoPlayer() {
                 {/* FIRST ROW: Pause/Play Button (Left-aligned) */}
                 <div className="flex items-center">
                   <button 
+                    suppressHydrationWarning
                     onClick={togglePlay}
                     className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-white text-yellow-600 hover:text-yellow-700 shadow-sm text-sm font-bold tracking-wide transition-colors"
                   >
@@ -365,6 +367,7 @@ export default function HomeVideoPlayer() {
                     </span>
                     
                     <input
+                      suppressHydrationWarning
                       type="range"
                       min={0}
                       max={100}
@@ -383,6 +386,7 @@ export default function HomeVideoPlayer() {
                     {/* Volume Mute and Slider */}
                     <div className="flex items-center gap-2">
                       <button 
+                        suppressHydrationWarning
                         onClick={toggleMute}
                         className="p-2 rounded-lg bg-white/5 hover:bg-white/15 border border-white/5 transition-colors"
                         title={isMuted ? "Unmute" : "Mute"}
@@ -395,6 +399,7 @@ export default function HomeVideoPlayer() {
                       </button>
                       
                       <input
+                        suppressHydrationWarning
                         type="range"
                         min={0}
                         max={1}
@@ -407,6 +412,7 @@ export default function HomeVideoPlayer() {
 
                     {/* Full Screen Toggle */}
                     <button 
+                      suppressHydrationWarning
                       onClick={toggleFullscreen}
                       className="p-2 rounded-lg bg-white/5 hover:bg-white/15 border border-white/5 transition-colors ml-1"
                       title={isFullscreen ? "Exit Full Screen" : "Full Screen"}

@@ -225,6 +225,7 @@ export default function HeroSection() {
                   animate={{
                     scale: [1, 1.15, 0.9, 1],
                     rotate: [0, 180, 360],
+                    
                     x: [0, 12, -12, 0],
                     y: [0, -10, 10, 0],
                   }}
