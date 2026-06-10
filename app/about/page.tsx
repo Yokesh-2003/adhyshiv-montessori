@@ -4,6 +4,7 @@ import FloatingNavbar from "@/components/FloatingNavbar";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/AboutHero";
 import AboutVisionMission from "@/components/AboutVisionMission";
+import AboutPhilosophyAndHouses from "@/components/AboutPhilosophyAndHouses";
 import AboutFounder from "@/components/AboutFounder";
 import AboutTribute from "@/components/AboutTribute";
 import AboutLogoStory from "@/components/AboutLogoStory";
@@ -24,6 +25,9 @@ export default function AboutPage() {
 
         {/* Section 1.5: Vision, Mission, Values */}
         <AboutVisionMission />
+
+        {/* Section 1.8: Montessori Philosophy, Logo Pillars, and Houses */}
+        <AboutPhilosophyAndHouses />
 
         {/* Section 3: Maria Montessori Tribute (Tribute letter & Right concentric orbits) */}
         <AboutTribute />

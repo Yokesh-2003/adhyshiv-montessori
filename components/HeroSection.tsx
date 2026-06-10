@@ -10,6 +10,11 @@ const SLIDES = [
   { src: "/images/hero-playground.jpg", alt: "Montessori playground" },
   { src: "/images/hero-eating.jpg", alt: "Children having nutritious meals" },
   { src: "/images/hero-classroom.JPG", alt: "Montessori classroom learning" },
+  { src: "/images/1.jpeg", alt: "Montessori learning activity" },
+  { src: "/images/2.jpeg", alt: "Hands-on preschool education" },
+  { src: "/images/3.jpeg", alt: "Montessori classroom exploration" },
+  { src: "/images/4.jpeg", alt: "Creative child development" },
+  { src: "/images/5.jpeg", alt: "Children collaborating and learning" },
 ];
 
 const INTERVAL_MS = 4000;
@@ -202,20 +207,17 @@ export default function HeroSection() {
             {/* Bottom Badges */}
             <div className="flex flex-wrap gap-2.5 pt-4">
               <span className="px-5 py-2.5 bg-white rounded-full border border-slate-200/80 text-slate-700 text-xs sm:text-sm font-extrabold shadow-[0_2px_4px_rgba(0,0,0,0.02)] select-none">
-                Ages 2–6
+                Primary (2-6 years)
               </span>
               <span className="px-5 py-2.5 bg-white rounded-full border border-slate-200/80 text-slate-700 text-xs sm:text-sm font-extrabold shadow-[0_2px_4px_rgba(0,0,0,0.02)] select-none">
-                Montessori
-              </span>
-              <span className="px-5 py-2.5 bg-white rounded-full border border-slate-200/80 text-slate-700 text-xs sm:text-sm font-extrabold shadow-[0_2px_4px_rgba(0,0,0,0.02)] select-none">
-                Anna Nagar
+                Elementary (6+ years)
               </span>
             </div>
           </div>
 
           {/* Right Column - Glowing Slideshow Box */}
           <div className="lg:col-span-5 flex justify-center items-center w-full mt-8 lg:mt-0">
-            <div className="relative w-full max-w-[440px] aspect-square p-2">
+            <div className="relative w-full max-w-[680px] aspect-[16/10] p-2">
               {/* Outer Vibrant Ambient Glow - Dynamic rotating/morphing blobs & orbiting stars */}
               <div className="absolute -inset-4 pointer-events-none select-none">
                 {/* Pink glow blob */}
@@ -322,10 +324,10 @@ export default function HeroSection() {
               </div>
 
               {/* White Frame Container */}
-              <div className="relative w-full h-full border-[10px] sm:border-[14px] border-white rounded-[2.25rem] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden">
+              <div className="relative w-full h-full border-[10px] sm:border-[14px] border-white rounded-[3.25rem] bg-white shadow-[0_25px_60px_rgba(0,0,0,0.18)] overflow-hidden">
                 
                 {/* Slideshow Wrapper */}
-                <div className="relative w-full h-full overflow-hidden rounded-[1.25rem]">
+                <div className="relative w-full h-full overflow-hidden rounded-[2.5rem]">
                   <AnimatePresence mode="sync">
                     <motion.div
                       key={current}

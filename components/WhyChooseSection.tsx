@@ -32,7 +32,7 @@ export default function WhyChooseSection() {
 
   return (
     <section
-      className="relative w-full bg-cover bg-center py-20 md:py-32 overflow-hidden"
+      className="relative w-full bg-cover bg-center pt-10 pb-20 md:pt-16 md:pb-32 overflow-hidden"
       style={{
         backgroundImage: "url('/images/home/bg1.jpg')",
       }}
@@ -43,14 +43,26 @@ export default function WhyChooseSection() {
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-pink-600 md:text-5xl">
+          <div className="mb-16 text-center max-w-6xl mx-auto">
+            <h2 className="mb-6 text-4xl font-bold text-pink-600 md:text-5xl">
               Why Choose AdhyShiv - USP'S
             </h2>
-            <p className="text-lg text-gray-700 md:text-xl">
-              At Adhyshiv International Montessori, our distinctiveness is rooted
-              in these essential pillars
-            </p>
+
+            {/* USP Intro Block */}
+            <div className="mb-12 max-w-5xl mx-auto text-left">
+              <h3 className="text-2xl md:text-3xl font-black text-[#1e40af] mb-4 text-center tracking-tight">
+                Childhood is not a Race!
+              </h3>
+              <p className="text-base md:text-lg text-slate-700 font-bold mb-4 leading-relaxed text-justify">
+                Every child arrives with their own rhythm, interests, strengths, and way of seeing the world.
+              </p>
+              <p className="text-sm md:text-base text-slate-600 mb-4 leading-relaxed text-justify">
+                At Adhyshiv, we believe education begins by respecting the child. Our Montessori environment allows children to explore, discover, question, create, and grow at their own pace while developing confidence, concentration, responsibility, and empathy.
+              </p>
+              <p className="text-base md:text-lg text-slate-800 font-extrabold leading-relaxed text-justify">
+                Here, learning is not forced. <span className="text-pink-600 font-black">It is joyfully discovered.</span>
+              </p>
+            </div>
           </div>
 
           {/* Cards Grid (Arrange in same line / 3 columns on both mobile and desktop) */}

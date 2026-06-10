@@ -1,42 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, GraduationCap, Clock, School } from "lucide-react";
+import { Smile, BookOpen, Heart, Palette } from "lucide-react";
 
 export default function StatsSection() {
   const stats = [
     {
-      label: "STUDENTS",
-      value: "2,100+",
-      icon: Users,
+      label: "HAPPY LEARNERS",
+      value: "150+",
+      icon: Smile,
       iconColor: "text-blue-500 bg-blue-50",
       bgGradient: "from-[#f0f7ff] to-[#e0efff] border-blue-100/40",
     },
     {
-      label: "EDUCATORS",
-      value: "200+",
-      icon: GraduationCap,
+      label: "HANDS-ON EXPERIENCES",
+      value: "500+",
+      icon: BookOpen,
       iconColor: "text-amber-500 bg-amber-50",
       bgGradient: "from-[#fffbf0] to-[#fef5d6] border-amber-100/40",
     },
     {
-      label: "YEARS",
-      value: "10+",
-      icon: Clock,
+      label: "CHILD-CENTRIC ENVIRONMENT",
+      value: "100%",
+      icon: Heart,
       iconColor: "text-emerald-500 bg-emerald-50",
       bgGradient: "from-[#f0fdf4] to-[#dcfce7] border-emerald-100/40",
     },
     {
-      label: "CAMPUSES",
-      value: "2",
-      icon: School,
+      label: "CREATIVE ACTIVITIES",
+      value: "100+",
+      icon: Palette,
       iconColor: "text-purple-500 bg-purple-50",
       bgGradient: "from-[#faf5ff] to-[#f3e8ff] border-purple-100/40",
     },
   ];
 
   return (
-    <section className="relative w-full bg-[#fff9f5] pt-10 md:pt-0 pb-8 md:pb-12 select-none">
+    <section className="relative w-full bg-[#fff9f5] py-8 md:py-12 select-none">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, i) => {

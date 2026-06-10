@@ -106,13 +106,16 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-6xl font-black text-blue-900 tracking-tight mb-4">
               Contact & Plan a Visit
             </h1>
+            <p className="text-amber-500 text-base md:text-lg font-black max-w-3xl mx-auto leading-relaxed mb-3">
+              "The Best Gift we can give our little Children is the Joy of Learning"
+            </p>
             <p className="text-slate-600 text-sm md:text-base font-semibold max-w-2xl mx-auto">
-              Have a question or want to schedule a tour? Select the appropriate option from the dropdown below to message us directly.
+              Come experience a school where childhood is respected, curiosity is celebrated, and every child is encouraged to become the best version of themselves.
             </p>
           </div>
 
           {/* Details Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
             {/* Location Card */}
             <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
               <div 
@@ -161,34 +164,19 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* School Timings Card */}
+            {/* Visiting Timings Card */}
             <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
               <div 
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
                 style={{ backgroundColor: '#6b21a8' }}
               >
-                <Clock className="w-6 h-6" />
+                <Clock className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-slate-800 mb-1">School Timings</h3>
+                <h3 className="text-lg font-bold text-slate-800 mb-1">Visiting Timings</h3>
                 <p className="text-sm font-semibold text-slate-600 leading-relaxed">
-                  9:00 AM to 2:30 PM
-                </p>
-              </div>
-            </div>
-
-            {/* Office Timings Card */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
-              <div 
-                className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
-                style={{ backgroundColor: '#06b6d4' }}
-              >
-                <User className="w-6 h-6" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-bold text-slate-800 mb-1">Office Timings</h3>
-                <p className="text-sm font-semibold text-slate-600 leading-relaxed">
-                  8:30 AM to 4:00 PM
+                  Weekdays: 2:00 PM - 4:00 PM <br />
+                  Saturdays: 11:00 AM - 2:00 PM
                 </p>
               </div>
             </div>
