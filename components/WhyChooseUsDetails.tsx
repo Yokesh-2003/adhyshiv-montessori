@@ -4,76 +4,50 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
-const valuesList = [
-  "Child-Centric Excellence",
-  "Montessori Philosophy",
-  "Curiosity and Exploration",
-  "Independence",
-  "Empathy",
-  "Social Justice",
-  "Holistic Development",
-  "Community Empowerment",
-  "Quality Education",
+const gainsList = [
+  "Confidence to express themselves",
+  "Independence in everyday tasks",
+  "Strong concentration skills",
+  "Love for learning",
+  "Respect for self and others",
+  "Problem-solving abilities",
+  "Emotional resilience",
+  "Leadership qualities",
+  "Communication",
+  "Creativity",
+  "Collaboration",
 ];
 
 export default function WhyChooseUsDetails() {
   return (
     <section
       id="why-choose-us"
-      className="relative w-full overflow-hidden bg-cover bg-center py-20 md:py-28"
+      className="relative w-full overflow-hidden bg-cover bg-center pt-12 pb-20 md:pt-16 md:pb-28"
       style={{
         backgroundImage: "url('/images/home/bg4.png')",
       }}
     >
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           
           {/* Left Column - Content */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div>
-              <span className="text-sm font-bold tracking-[0.2em] text-amber-500 uppercase">
-                Why Choose Us ••••••
-              </span>
-              
-              {/* Vision & Mission Side-by-Side (2 Columns) */}
-              <div className="grid grid-cols-2 gap-4 md:gap-8 mt-6">
-                {/* Vision */}
-                <div>
-                  <h3 className="text-base sm:text-xl font-bold text-[#1e40af] md:text-2xl mb-1.5 sm:mb-3">
-                    Vision
-                  </h3>
-                  <p className="text-[10px] sm:text-sm text-gray-600 leading-normal sm:leading-relaxed md:text-base">
-                    At the core of our vision resides the authentic Montessori experience,
-                    wherein children embark on a profound journey of self-discovery and
-                    academic growth. Our unwavering commitment is to nurture and
-                    empower confident, socially responsible individuals who become pillars of
-                    our community.
-                  </p>
-                </div>
-
-                {/* Mission */}
-                <div>
-                  <h3 className="text-base sm:text-xl font-bold text-[#1e40af] md:text-2xl mb-1.5 sm:mb-3">
-                    Mission
-                  </h3>
-                  <p className="text-[10px] sm:text-sm text-gray-600 leading-normal sm:leading-relaxed md:text-base">
-                    Driven by a commitment to excellence, our mission is to deliver an
-                    esteemed Montessori education program. This program is meticulously
-                    overseen by certified Montessori professionals and enriched through the
-                    utilization of the highest quality educational materials.
-                  </p>
-                </div>
-              </div>
-
-              {/* Values */}
-              <div className="mt-8">
-                <h3 className="text-xl font-bold text-[#1e40af] md:text-2xl mb-4">
-                  Values
-                </h3>
+              {/* Our Impact */}
+              <div>
+                <span className="text-sm font-bold tracking-[0.2em] text-amber-500 uppercase block mb-1">
+                  Our Impact
+                </span>
+                <h2 className="text-3xl font-bold text-[#1e40af] md:text-4xl tracking-tight">
+                  What Children Gain
+                </h2>
+                <p className="text-xs font-bold text-slate-800 uppercase tracking-wider mt-1 mb-6">
+                  Skills that matter for TOMORROW
+                </p>
                 <ul className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {valuesList.map((value, i) => (
+                  {gainsList.map((gain, i) => (
                     <motion.li
-                      key={value}
+                      key={gain}
                       initial={{ opacity: 0, x: -16 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -83,7 +57,7 @@ export default function WhyChooseUsDetails() {
                       <span className="flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-[#1e40af]/10 text-[#1e40af]">
                         <Check className="h-2.5 w-2.5 sm:h-3 sm:w-3 stroke-[3]" />
                       </span>
-                      <span>{value}</span>
+                      <span>{gain}</span>
                     </motion.li>
                   ))}
                 </ul>
