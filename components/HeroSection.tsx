@@ -15,6 +15,7 @@ const SLIDES = [
   { src: "/images/3.jpeg", alt: "Montessori classroom exploration" },
   { src: "/images/4.jpeg", alt: "Creative child development" },
   { src: "/images/5.jpeg", alt: "Children collaborating and learning" },
+  { src: "/images/6.png", alt: "Montessori child playing and learning" },
 ];
 
 const INTERVAL_MS = 4000;

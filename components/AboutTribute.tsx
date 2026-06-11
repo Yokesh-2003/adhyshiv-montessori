@@ -59,7 +59,7 @@ export default function AboutTribute() {
                   Sincerely,
                 </span>
                 <span className="text-base sm:text-lg font-extrabold text-amber-600 tracking-wide font-display">
-                  AdhyShiv International
+                  Adhyshiv International
                 </span>
               </div>
             </div>

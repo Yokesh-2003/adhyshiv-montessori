@@ -255,7 +255,7 @@ export default function HomeVideoPlayer() {
         <div className="text-center mb-10 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-xs uppercase tracking-wider mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-500" />
-            <span>Discover AdhyShiv</span>
+            <span>Discover Adhyshiv</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-blue-900 tracking-tight mb-4">
             A Glimpse Into Our Journey

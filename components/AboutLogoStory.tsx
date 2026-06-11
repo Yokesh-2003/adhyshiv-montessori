@@ -65,15 +65,15 @@ export default function AboutLogoStory() {
     },
     {
       id: 2,
-      label: "AdhyShiv",
-      title: "The Shiv Emblem",
+      label: "Adhyshiv",
+      title: "The Adhyshiv Emblem",
       subtitle: "STAGE 03 / 04",
-      description: "The integration of Sun rays and Moon crescent—combining day and night, energy and reflection. The traditional crown of looping rays above the cradled crescent forms the spiritual signature of AdhyShiv, balancing passion with serenity.",
+      description: "The integration of Sun rays and Moon crescent—combining day and night, energy and reflection. The traditional crown of looping rays above the cradled crescent forms the spiritual signature of Adhyshiv, balancing passion with serenity.",
       icon: (
         <div className="relative w-12 h-12">
           <Image
             src="/images/about/shiv-logo.png"
-            alt="The Shiv Emblem"
+            alt="The Adhyshiv Emblem"
             fill
             className="object-contain"
           />
@@ -83,7 +83,7 @@ export default function AboutLogoStory() {
         <div className="relative w-36 h-36 drop-shadow-md mx-auto">
           <Image
             src="/images/about/shiv-logo.png"
-            alt="The Shiv Emblem"
+            alt="The Adhyshiv Emblem"
             fill
             className="object-contain"
           />
@@ -93,14 +93,14 @@ export default function AboutLogoStory() {
     {
       id: 3,
       label: "Our Identity",
-      title: "AdhyShiv Montessori",
+      title: "Adhyshiv Montessori",
       subtitle: "STAGE 04 / 04",
-      description: "Our complete institutional logo. By overlaying the AdhyShiv symbol onto our official wordmark, we represent a unified commitment to authentic Montessori pedagogy, child advocacy, and premium early childhood development.",
+      description: "Our complete institutional logo. By overlaying the Adhyshiv symbol onto our official wordmark, we represent a unified commitment to authentic Montessori pedagogy, child advocacy, and premium early childhood development.",
       icon: (
         <div className="relative w-16 h-10">
           <Image
             src="/images/about/overlay.png"
-            alt="AdhyShiv Logo Symbol"
+            alt="Adhyshiv Logo Symbol"
             fill
             className="object-contain"
           />
@@ -110,7 +110,7 @@ export default function AboutLogoStory() {
         <div className="relative w-full max-w-[280px] aspect-[16/10] mx-auto filter drop-shadow-md bg-white/40 p-4 rounded-2xl border border-stone-200/50">
           <Image
             src="/images/about/overlay.png"
-            alt="AdhyShiv Full Logo"
+            alt="Adhyshiv Full Logo"
             fill
             className="object-contain p-2"
           />

@@ -52,7 +52,7 @@ export default function FounderAboutSection() {
                   ABOUT US ...
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-700">
-                  At AdhyShiv International Montessori, we offer a well-curated curriculum that encourages a strong foundation in practical life skills, creativity, and a deep appreciation for the natural world. Our carefully prepared classrooms are designed to provide a stimulating learning environment, fostering independence and critical thinking.
+                  At Adhyshiv International Montessori, we offer a well-curated curriculum that encourages a strong foundation in practical life skills, creativity, and a deep appreciation for the natural world. Our carefully prepared classrooms are designed to provide a stimulating learning environment, fostering independence and critical thinking.
                 </p>
               </div>
             </div>

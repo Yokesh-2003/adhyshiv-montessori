@@ -45,7 +45,7 @@ export default function WhyChooseSection() {
           {/* Header */}
           <div className="mb-16 text-center max-w-6xl mx-auto">
             <h2 className="mb-6 text-4xl font-bold text-pink-600 md:text-5xl">
-              Why Choose AdhyShiv - USP'S
+              Why Choose Adhyshiv - USPs
             </h2>
 
             {/* USP Intro Block */}

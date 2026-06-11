@@ -17,7 +17,7 @@ const contactItems = [
     href: "https://maps.google.com",
   },
   { icon: Phone, text: "+91 78711 11111", href: "tel:+917871111111" },
-  { icon: Mail, text: "Info@adhyshiv.com", href: "mailto:Info@adhyshiv.com" },
+  { icon: Mail, text: "adhyshivtrust@gmail.com", href: "mailto:adhyshivtrust@gmail.com" },
   { icon: Clock, text: "Weekdays : 2.00 PM - 4.00 PM", href: null },
   { icon: Clock, text: "Saturdays : 11.00 AM - 2.00 PM", href: null },
 ];
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Column 1 — Brand */}
           <div className="flex flex-col gap-6">
-            <Link href="#home" aria-label="Home">
+            <Link href="/" aria-label="Home">
               <BrandLogo size={180} />
             </Link>
             <div className="flex gap-4">

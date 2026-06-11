@@ -65,11 +65,11 @@ export default function GalleryPage() {
               Moments & Memories
             </h2>
             <p className="text-[#4a3540] font-sans text-sm sm:text-base leading-relaxed max-w-xl">
-              A visual chronicle of daily life, hands-on learning experiences, and special milestones at AdhyShiv. We are curating our album collection and will upload our high-resolution photo galleries here shortly.
+              A visual chronicle of daily life, hands-on learning experiences, and special milestones at Adhyshiv. We are curating our album collection and will upload our high-resolution photo galleries here shortly.
             </p>
             <div className="h-12 w-[1px] bg-amber-500/30" />
             <span className="text-xs font-bold tracking-widest text-amber-600 uppercase">
-              AdhyShiv International Montessori
+              Adhyshiv International Montessori
             </span>
           </motion.div>
         </div>

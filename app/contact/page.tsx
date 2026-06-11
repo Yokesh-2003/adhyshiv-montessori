@@ -143,7 +143,7 @@ export default function ContactPage() {
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-slate-800 mb-1">Email Id</h3>
                 <p className="text-sm font-semibold text-slate-600 leading-relaxed break-all">
-                  Info@adhyshiv.com
+                  adhyshivtrust@gmail.com
                 </p>
               </div>
             </div>
@@ -411,7 +411,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Maps embed showing AdhyShiv Montessori"
+                  title="Google Maps embed showing Adhyshiv Montessori"
                 />
               </div>
             </div>

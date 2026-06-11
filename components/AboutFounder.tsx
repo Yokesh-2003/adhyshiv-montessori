@@ -41,7 +41,7 @@ export default function AboutFounder() {
               <div className="relative w-full h-full rounded-[2rem] overflow-hidden border border-amber-200 shadow-xl bg-white">
                 <Image
                   src="/images/about/founder.png"
-                  alt="Founder of AdhyShiv"
+                  alt="Founder of Adhyshiv"
                   fill
                   className="object-cover transition-all duration-500 hover:scale-[1.03]"
                   priority
@@ -78,7 +78,7 @@ export default function AboutFounder() {
                 MEET OUR LEADERSHIP
               </span>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-blue-900 font-display tracking-tight leading-tight">
-                Founder of AdhyShiv
+                Founder of Adhyshiv
               </h2>
               <div className="h-1 w-24 bg-amber-500 rounded-full mt-2" />
             </div>

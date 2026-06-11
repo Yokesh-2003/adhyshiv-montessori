@@ -288,7 +288,7 @@ export default function AboutPhilosophyAndHouses() {
               <div className="relative w-full max-w-[260px] aspect-[16/10] bg-white/60 p-4 rounded-3xl border border-stone-200/50 shadow-[inset_0_2px_8px_rgba(0,0,0,0.02)] flex items-center justify-center">
                 <Image
                   src="/images/about/overlay.png"
-                  alt="AdhyShiv Full Logo"
+                  alt="Adhyshiv Full Logo"
                   width={220}
                   height={130}
                   className="object-contain"
@@ -299,7 +299,7 @@ export default function AboutPhilosophyAndHouses() {
                   Official Logo Emblem
                 </span>
                 <p className="text-xs text-slate-500 font-bold leading-relaxed max-w-[220px] mx-auto">
-                  The visual signature of AdhyShiv International Montessori
+                  The visual signature of Adhyshiv International Montessori
                 </p>
               </div>
             </motion.div>

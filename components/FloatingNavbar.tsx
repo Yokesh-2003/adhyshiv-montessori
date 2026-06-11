@@ -70,7 +70,7 @@ export default function FloatingNavbar() {
         >
           {/* Logo on the left */}
           <Link
-            href="#home"
+            href="/"
             className="flex shrink-0 items-center transition-opacity hover:opacity-90 relative z-20"
             aria-label="Home"
           >

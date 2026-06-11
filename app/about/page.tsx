@@ -32,7 +32,7 @@ export default function AboutPage() {
         {/* Section 3: Maria Montessori Tribute (Tribute letter & Right concentric orbits) */}
         <AboutTribute />
 
-        {/* Section 2: Founder of AdhyShiv (Stepped timeline & Left concentric orbits) */}
+        {/* Section 2: Founder of Adhyshiv (Stepped timeline & Left concentric orbits) */}
         <AboutFounder />
 
         {/* Section 4: Our Logo Story (Interactive Ferris Wheel Dial Carousel) */}

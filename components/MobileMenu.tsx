@@ -39,7 +39,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             aria-label="Mobile navigation"
           >
             <div className="mb-6 flex items-center justify-between">
-              <BrandLogo size={48} />
+              <Link href="/" onClick={onClose} aria-label="Home">
+                <BrandLogo size={48} />
+              </Link>
               <button
                 type="button"
                 onClick={onClose}

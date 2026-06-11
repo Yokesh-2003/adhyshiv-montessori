@@ -46,6 +46,10 @@ const faqData: FAQItem[] = [
     question: "Freedom with responsibility",
     answer: "Within a structured environment, children have the freedom to choose their tasks, move around, and work at their own pace. However, this freedom is paired with the responsibility to respect the classroom rules, handle materials carefully, and clean up after themselves.",
   },
+  {
+    question: "What is the difference between Waldorf and Montessori education?",
+    answer: "Both Waldorf and Montessori are child-centered educational approaches that respect each child's unique development. However, they differ in how learning is introduced and experienced.\n\nMontessori education emphasizes independence, self-directed learning, and hands-on exploration using specially designed learning materials. Children are encouraged to choose activities, work at their own pace, and develop practical life skills, concentration, and problem-solving abilities.\n\nWaldorf education places a stronger emphasis on imagination, storytelling, artistic expression, and teacher-guided learning experiences. Technology and formal academics are often introduced later, with a focus on creativity, rhythm, and holistic development.\n\nAt Adhyshiv International Montessori School, we follow the Montessori philosophy of \"Help me do it myself,\" empowering children to become confident, curious, independent learners while nurturing their social, emotional, and academic growth."
+  }
 ];
 
 export default function FAQSection() {
@@ -89,7 +93,7 @@ export default function FAQSection() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <div className="px-5 pb-5 pt-0 border-t border-slate-50 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-bold">
+              <div className="px-5 pb-5 pt-0 border-t border-slate-50 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-bold whitespace-pre-line text-justify">
                 {item.answer}
               </div>
             </motion.div>
