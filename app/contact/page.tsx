@@ -117,7 +117,7 @@ export default function ContactPage() {
           {/* Details Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
             {/* Location Card */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
+            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col items-start gap-4">
               <div 
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
                 style={{ backgroundColor: '#1e40af' }}
@@ -133,14 +133,14 @@ export default function ContactPage() {
             </div>
 
             {/* Email Card */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
+            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col items-start gap-4">
               <div 
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
                 style={{ backgroundColor: '#e11d48' }}
               >
                 <Mail className="w-6 h-6 text-white" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 w-full">
                 <h3 className="text-lg font-bold text-slate-800 mb-1">Email Id</h3>
                 <p className="text-sm font-semibold text-slate-600 leading-relaxed break-all">
                   adhyshivtrust@gmail.com
@@ -149,7 +149,7 @@ export default function ContactPage() {
             </div>
 
             {/* Phone Card */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
+            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col items-start gap-4">
               <div 
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
                 style={{ backgroundColor: '#f59e0b' }}
@@ -165,7 +165,7 @@ export default function ContactPage() {
             </div>
 
             {/* Visiting Timings Card */}
-            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex items-start gap-4">
+            <div className="bg-white rounded-3xl p-6 border border-stone-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] flex flex-col items-start gap-4">
               <div 
                 className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-md shrink-0"
                 style={{ backgroundColor: '#6b21a8' }}
