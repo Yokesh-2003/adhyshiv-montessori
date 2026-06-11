@@ -194,7 +194,7 @@ export default function HomeVideoPlayer() {
 
   return (
     <section 
-      className="relative w-full bg-cover bg-center py-16 md:py-24 overflow-hidden"
+      className="relative w-full bg-cover bg-center pt-4 pb-16 md:pt-6 md:pb-24 overflow-hidden"
       style={{
         backgroundImage: "url('/images/home/bg2.jpg')",
       }}

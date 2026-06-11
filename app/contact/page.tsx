@@ -141,7 +141,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1 w-full">
-                <h3 className="text-lg font-bold text-slate-800 mb-1">Email Id</h3>
+                <h3 className="text-lg font-bold text-slate-800 mb-1">Email ID</h3>
                 <p className="text-sm font-semibold text-slate-600 leading-relaxed break-all">
                   adhyshivtrust@gmail.com
                 </p>

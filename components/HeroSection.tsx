@@ -186,7 +186,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="text-base sm:text-lg md:text-xl text-slate-600 font-bold max-w-xl leading-relaxed">
-              Empowering young minds, one Montessori moment at a time.
+              Encouraging curious minds to GROW into confident Humans
             </p>
 
             {/* Buttons Section */}

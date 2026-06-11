@@ -32,7 +32,7 @@ export default function WhyChooseSection() {
 
   return (
     <section
-      className="relative w-full bg-cover bg-center pt-10 pb-20 md:pt-16 md:pb-32 overflow-hidden"
+      className="relative w-full bg-cover bg-center pt-10 pb-6 md:pt-16 md:pb-8 overflow-hidden"
       style={{
         backgroundImage: "url('/images/home/bg1.jpg')",
       }}
@@ -43,13 +43,13 @@ export default function WhyChooseSection() {
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
-          <div className="mb-16 text-center max-w-6xl mx-auto">
+          <div className="mb-8 text-center max-w-6xl mx-auto">
             <h2 className="mb-6 text-4xl font-bold text-pink-600 md:text-5xl">
               Why Choose Adhyshiv - USPs
             </h2>
 
             {/* USP Intro Block */}
-            <div className="mb-12 max-w-5xl mx-auto text-left">
+            <div className="mb-6 max-w-5xl mx-auto text-left">
               <h3 className="text-2xl md:text-3xl font-black text-[#1e40af] mb-4 text-center tracking-tight">
                 Childhood is not a Race!
               </h3>
