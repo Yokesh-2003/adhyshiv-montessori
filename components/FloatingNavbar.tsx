@@ -71,13 +71,16 @@ export default function FloatingNavbar() {
           {/* Logo on the left */}
           <Link
             href="/"
-            className="flex shrink-0 items-center transition-opacity hover:opacity-90 relative z-20"
+            className="flex flex-col items-center shrink-0 transition-opacity hover:opacity-90 relative z-20 py-0.5"
             aria-label="Home"
           >
             <BrandLogo 
-              size={125} 
-              className="w-[90px] md:w-[125px] h-[90px] md:h-[125px] md:-my-4 transition-all duration-300"
+              size={100} 
+              className="w-[68px] md:w-[96px] h-[68px] md:h-[96px] -mt-1 md:-mt-3.5 md:-mb-1 transition-all duration-300"
             />
+            <span className="text-[6px] md:text-[7.5px] font-black uppercase tracking-[0.16em] text-[#1e40af] -mt-1.5 md:-mt-2.5 whitespace-nowrap block">
+              A world of Discovery
+            </span>
           </Link>
 
           {/* Navigation Links centered on desktop */}

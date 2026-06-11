@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
   { src: "/images/hero-playground.jpg", alt: "Montessori playground" },
@@ -32,6 +32,10 @@ export default function HeroSection() {
 
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % SLIDES.length);
+  };
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
   };
 
   return (
@@ -168,12 +172,14 @@ export default function HeroSection() {
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-800 tracking-tight leading-[1.1] md:leading-[1.05]">
               Where little minds <br className="hidden sm:inline" />
-              <span className="inline-flex flex-row flex-nowrap whitespace-nowrap gap-[1.5px] sm:gap-[3px] font-black mr-2 select-none">
-                <span className="text-[#2ec8b6]">s</span>
-                <span className="text-[#a855f7]">h</span>
-                <span className="text-[#3b82f6]">i</span>
-                <span className="text-[#ff6097]">n</span>
-                <span className="text-[#fbbf24]">e</span>
+              <span className="inline-block whitespace-nowrap">
+                <span className="inline-flex flex-row flex-nowrap gap-[1.5px] sm:gap-[3px] font-black mr-2 select-none">
+                  <span className="text-[#2ec8b6]">s</span>
+                  <span className="text-[#a855f7]">h</span>
+                  <span className="text-[#3b82f6]">i</span>
+                  <span className="text-[#ff6097]">n</span>
+                  <span className="text-[#fbbf24]">e</span>
+                </span>
               </span>
               bright
             </h1>
@@ -354,15 +360,26 @@ export default function HeroSection() {
 
                 {/* Removed Ages 2-6 badge per user request */}
 
-                {/* Overlapping Button: Sparkles (Manual Next slide control) */}
+                {/* Left Arrow Button (<) */}
+                <button
+                  onClick={handlePrev}
+                  type="button"
+                  aria-label="Previous slide"
+                  suppressHydrationWarning
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-slate-900/60 hover:bg-slate-900 text-white rounded-full flex items-center justify-center border-2 border-white/85 shadow-md active:scale-90 transition-all cursor-pointer backdrop-blur-sm"
+                >
+                  <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+                </button>
+
+                {/* Right Arrow Button (>) */}
                 <button
                   onClick={handleNext}
                   type="button"
                   aria-label="Next slide"
                   suppressHydrationWarning
-                  className="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900 text-white rounded-full flex items-center justify-center border-2 border-white shadow-md hover:bg-slate-800 active:scale-90 transition-all cursor-pointer"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-slate-900/60 hover:bg-slate-900 text-white rounded-full flex items-center justify-center border-2 border-white/85 shadow-md active:scale-90 transition-all cursor-pointer backdrop-blur-sm"
                 >
-                  <Sparkles className="w-5 h-5 text-white" />
+                  <ChevronRight className="w-5 h-5 stroke-[2.5]" />
                 </button>
               </div>
 
@@ -372,7 +389,7 @@ export default function HeroSection() {
               </div>
 
               {/* Sticker Outside Right: Montessori (Purple) */}
-              <div className="absolute top-[42%] -right-8 z-30 px-4 py-2 bg-[#a855f7] text-white font-extrabold text-xs sm:text-sm rounded-full border-2 border-white shadow-[0_4px_10px_rgba(168,85,247,0.3)] rotate-6 select-none whitespace-nowrap">
+              <div className="absolute top-[72%] -right-8 z-30 px-4 py-2 bg-[#a855f7] text-white font-extrabold text-xs sm:text-sm rounded-full border-2 border-white shadow-[0_4px_10px_rgba(168,85,247,0.3)] rotate-6 select-none whitespace-nowrap">
                 Montessori
               </div>
 

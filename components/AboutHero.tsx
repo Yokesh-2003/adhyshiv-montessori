@@ -44,14 +44,19 @@ export default function AboutHero() {
         <div className="lg:col-span-5 flex flex-col items-center gap-8 lg:pl-6 relative z-10">
           
           {/* Adhyshiv Dark Text Logo (overlay.png) */}
-          <div className="relative w-full max-w-[340px] sm:max-w-[450px] aspect-[16/10] flex items-center justify-center z-10">
-            <Image
-              src="/images/about/overlay.png"
-              alt="Adhyshiv International Montessori Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="flex flex-col items-center w-full max-w-[340px] sm:max-w-[450px]">
+            <div className="relative w-full aspect-[16/10] flex items-center justify-center z-10">
+              <Image
+                src="/images/about/overlay.png"
+                alt="Adhyshiv International Montessori Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-xs sm:text-sm font-black uppercase tracking-[0.25em] text-[#1e40af] mt-2 text-center whitespace-nowrap">
+              A world of Discovery
+            </span>
           </div>
 
           {/* Book Doodle positioned BEHIND the entire Quote card */}
